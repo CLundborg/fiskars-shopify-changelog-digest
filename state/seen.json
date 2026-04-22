@@ -1,5 +1,5 @@
 {
-  "lastRunAt": "2026-04-22T12:17:09.451Z",
+  "lastRunAt": "2026-04-22T12:18:15.451Z",
   "seenIds": [
     "dev:https://shopify.dev/changelog/new-app-submission-experience-in-the-partner-dashboard",
     "merchant:https://changelog.shopify.com/posts/updates-to-local-pickup-user-experience-in-checkout",
@@ -387,7 +387,6 @@
     "dev:https://shopify.dev/changelog/metaobject-field-capabilities",
     "merchant:https://changelog.shopify.com/posts/multi-store-reporting-is-now-available-in-analytics",
     "dev:https://shopify.dev/changelog/removal-of-deprecated-shopdraftorders-connection-in-admin-graphql-api",
-    "dev:https://shopify.dev/changelog/upgrade-to-the-latest-version-of-checkout-kit-to-avoid-issues-with-ios-26",
     "merchant:https://changelog.shopify.com/posts/send-customers-an-email-notification-when-they-receive-store-credit",
     "merchant:https://changelog.shopify.com/posts/run-personalized-pre-launch-checks-in-under-2-minutes-with-shopify-launch-check",
     "merchant:https://changelog.shopify.com/posts/sidekick-fullscreen-mode",
@@ -3266,6 +3265,7 @@
     "dev:https://shopify.dev/changelog/the-discounts-resource-has-been-deprecated",
     "dev:https://shopify.dev/changelog/hosted-payment-sdk-requests-will-include-a-new-key-value-pair-for-locale",
     "dev:https://shopify.dev/changelog/the-order-resource-now-validates-key-properties-for-the-shipping-and-billing-addresses",
+    "dev:https://shopify.dev/changelog/upgrade-to-the-latest-version-of-checkout-kit-to-avoid-issues-with-ios-26",
     "https://shopify.dev/changelog/new-app-submission-experience-in-the-partner-dashboard",
     "https://shopify.dev/changelog/added-mostrelevant-value-for-collectionsortorder",
     "https://shopify.dev/changelog/removing-deprecated-private-and-publicread-enums-on-metaobject-definitions",
