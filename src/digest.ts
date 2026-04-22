@@ -30,7 +30,11 @@ interface State {
 
 const FEED_URL = "https://shopify.dev/changelog/feed.xml";
 const STATE_PATH = resolve("state", "seen.json");
-const MAX_SEEN = 500; // keep the state file bounded
+// The Shopify changelog feed currently carries ~1,800 historical entries and
+// grows slowly. We keep the cap well above that so the full feed always fits
+// in state — otherwise entries beyond the cap re-surface as "new" on each run.
+// A state file with 10,000 ~50-char IDs is ~500KB: trivial for git.
+const MAX_SEEN = 10000;
 // Slack caps Block Kit messages at 50 blocks. We use 3 for header/context/divider
 // and a potential 1 for an overflow footer, so keep ≤46 entries per message.
 const MAX_ENTRIES_PER_MESSAGE = 40;
