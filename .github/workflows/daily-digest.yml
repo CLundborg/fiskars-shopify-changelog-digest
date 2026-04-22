@@ -2,11 +2,14 @@ name: Daily Shopify changelog digest
 
 on:
   schedule:
-    # 07:00 UTC — approximately 09:00 Europe/Copenhagen year-round.
-    # (08:00 in winter / 09:00 in summer. Close enough for a morning digest;
-    # GitHub Actions cron is UTC-only and runs may be delayed 5-15 min anyway.)
-    - cron: "0 7 * * 1-5"
+    # Goal: 08:30 Europe/Copenhagen, weekdays, year-round.
+    # GitHub Actions cron is UTC-only, so we list both "summer" and "winter"
+    # equivalents and let the script's --schedule-guard drop the run that
+    # isn't actually 08:xx Copenhagen local. One run per weekday posts.
+    - cron: "30 6 * * 1-5"   # 08:30 CEST (summer) / 07:30 CET (winter, skipped)
+    - cron: "30 7 * * 1-5"   # 09:30 CEST (summer, skipped) / 08:30 CET (winter)
   # Allow manual triggering from the Actions tab for testing / ad-hoc runs.
+  # Manual runs are NOT subject to the timezone guard — they always post.
   workflow_dispatch:
 
 permissions:
@@ -36,7 +39,12 @@ jobs:
       - name: Post digest
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: node dist/digest.js
+        run: |
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            node dist/digest.js --schedule-guard
+          else
+            node dist/digest.js
+          fi
 
       - name: Commit updated state
         run: |

@@ -1,16 +1,19 @@
 # fiskars-shopify-changelog-digest
 
-Every weekday at ~09:00 Europe/Copenhagen, posts a digest of new [Shopify developer changelog](https://shopify.dev/changelog) entries to a Slack channel. If nothing's new, it still posts a tiny "Nothing new today" note so you know the bot ran.
+Every weekday at 08:30 Europe/Copenhagen (year-round — DST handled), posts a digest of new [Shopify developer changelog](https://shopify.dev/changelog) entries to a Slack channel. If nothing's new, it still posts a tiny "Nothing new today" note so you know the bot ran.
 
 Runs entirely on GitHub Actions — no server, no cron on your machine.
 
 ## How it works
 
-1. `cron: "0 7 * * 1-5"` — GitHub triggers the workflow at 07:00 UTC Mon–Fri (≈09:00 CET / 08:00 CEST).
-2. The workflow fetches `https://shopify.dev/changelog/feed.xml`.
-3. Each entry's `guid` is diffed against `state/seen.json` (committed to the repo).
-4. New entries → Slack Block Kit message. No new entries → "Nothing new today" context message.
-5. Updated `state/seen.json` is committed back so tomorrow's run is a true delta.
+1. GitHub Actions cron is UTC-only, so two weekday crons are scheduled — `30 6 * * 1-5` and `30 7 * * 1-5`. One of them is 08:30 Copenhagen in summer (CEST), the other is 08:30 Copenhagen in winter (CET).
+2. A `--schedule-guard` flag in the script checks the current Europe/Copenhagen hour and skips the run if it isn't 8, so only the correct one posts.
+3. The workflow fetches `https://shopify.dev/changelog/feed.xml`.
+4. Each entry's `guid` is diffed against `state/seen.json` (committed to the repo).
+5. New entries → Slack Block Kit message. No new entries → "Nothing new today" context message.
+6. Updated `state/seen.json` is committed back so tomorrow's run is a true delta.
+
+Manual runs from the **Actions** tab bypass the timezone guard, so you can always trigger an ad-hoc post for testing.
 
 ## Setup (one-time)
 
@@ -62,15 +65,16 @@ npm run dry-run
 
 ### Schedule
 
-Edit `.github/workflows/daily-digest.yml`:
+Default: **08:30 Europe/Copenhagen, Mon–Fri**, implemented via two UTC crons + a timezone guard (see "How it works" above).
 
-```yaml
-- cron: "0 7 * * 1-5"   # 07:00 UTC Mon-Fri
-- cron: "0 7 * * *"     # daily including weekends
-- cron: "0 14 * * 1-5"  # 14:00 UTC (afternoon digest)
-```
+To change the target local hour, edit both:
 
-GitHub Actions cron is always UTC. [Crontab guru](https://crontab.guru) is handy for building expressions.
+1. The two `cron:` lines in `.github/workflows/daily-digest.yml` (pick UTC offsets that cover both CEST/CET for your desired local hour).
+2. The `SCHEDULE_TARGET_HOUR` constant in `src/digest.ts`.
+
+To change weekdays → every day, swap `1-5` for `*` in both cron entries.
+
+[Crontab guru](https://crontab.guru) is handy for building UTC expressions. Note that GitHub Actions scheduled runs can be delayed 5–15 minutes under load — this is documented behaviour, not a bug.
 
 ### Slack message format
 

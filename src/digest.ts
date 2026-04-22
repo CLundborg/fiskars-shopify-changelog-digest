@@ -39,9 +39,17 @@ const MAX_SEEN = 10000;
 // and a potential 1 for an overflow footer, so keep ≤46 entries per message.
 const MAX_ENTRIES_PER_MESSAGE = 40;
 
+// We want the digest posted at 08:30 Europe/Copenhagen year-round, but GitHub
+// Actions cron is UTC-only, so we schedule two weekday crons (one for CEST,
+// one for CET) and let the script drop the one that isn't actually morning
+// Copenhagen time. The "target hour" is 8, with a small tolerance band so
+// that routine 5-15 min Actions scheduling delays don't cause a skipped day.
+const SCHEDULE_TARGET_HOUR = 8;
+
 async function main() {
   const dryRun = process.argv.includes("--dry-run");
   const markSeenOnly = process.argv.includes("--mark-seen-only");
+  const scheduleGuard = process.argv.includes("--schedule-guard");
   const webhook = process.env["SLACK_WEBHOOK_URL"];
 
   if (!dryRun && !markSeenOnly && !webhook) {
@@ -49,6 +57,20 @@ async function main() {
       "SLACK_WEBHOOK_URL is required (or pass --dry-run / --mark-seen-only)",
     );
     process.exit(2);
+  }
+
+  if (scheduleGuard) {
+    const hour = getCopenhagenHour();
+    if (hour !== SCHEDULE_TARGET_HOUR) {
+      console.log(
+        `[digest] --schedule-guard: current Europe/Copenhagen hour is ${hour}, ` +
+          `target is ${SCHEDULE_TARGET_HOUR}. Skipping this run.`,
+      );
+      return;
+    }
+    console.log(
+      `[digest] --schedule-guard: Europe/Copenhagen hour is ${hour}, proceeding.`,
+    );
   }
 
   console.log(`[digest] fetching ${FEED_URL}`);
@@ -288,6 +310,17 @@ function escapeMd(s: string): string {
 
 function truncate(s: string, n: number): string {
   return s.length > n ? s.slice(0, n - 1) + "…" : s;
+}
+
+function getCopenhagenHour(d: Date = new Date()): number {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Copenhagen",
+    hour: "2-digit",
+    hour12: false,
+  }).formatToParts(d);
+  const hour = parts.find((p) => p.type === "hour")?.value ?? "0";
+  // "en-GB" with hour12:false returns "00"–"23".
+  return parseInt(hour, 10);
 }
 
 function fmtHumanDate(d: Date): string {
