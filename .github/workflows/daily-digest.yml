@@ -1,0 +1,51 @@
+name: Daily Shopify changelog digest
+
+on:
+  schedule:
+    # 07:00 UTC — approximately 09:00 Europe/Copenhagen year-round.
+    # (08:00 in winter / 09:00 in summer. Close enough for a morning digest;
+    # GitHub Actions cron is UTC-only and runs may be delayed 5-15 min anyway.)
+    - cron: "0 7 * * 1-5"
+  # Allow manual triggering from the Actions tab for testing / ad-hoc runs.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Post digest
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: node dist/digest.js
+
+      - name: Commit updated state
+        run: |
+          if [[ -n "$(git status --porcelain state/seen.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add state/seen.json
+            git commit -m "chore: update digest state [skip ci]"
+            git push
+          else
+            echo "No state changes to commit."
+          fi
