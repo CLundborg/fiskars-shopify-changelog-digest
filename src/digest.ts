@@ -15,6 +15,7 @@ interface RawRssItem {
 
 interface Entry {
   id: string;
+  source: string; // FeedSpec.id
   title: string;
   link: string;
   publishedAt: string; // ISO
@@ -28,7 +29,31 @@ interface State {
   seenIds: string[];
 }
 
-const FEED_URL = "https://shopify.dev/changelog/feed.xml";
+interface FeedSpec {
+  id: string; // stable, used in logs / potentially state
+  label: string; // shown to humans in Slack sub-headers
+  url: string; // RSS/XML endpoint to fetch
+  homeUrl: string; // human-facing homepage (for message links)
+}
+
+// Feeds are fetched in parallel, entries are merged, and the Slack message
+// groups them by source. Add more feeds here as needed — new entries
+// automatically flow through the same dedupe + post pipeline.
+const FEEDS: FeedSpec[] = [
+  {
+    id: "dev",
+    label: "Developer changelog",
+    url: "https://shopify.dev/changelog/feed.xml",
+    homeUrl: "https://shopify.dev/changelog",
+  },
+  {
+    id: "merchant",
+    label: "Merchant changelog",
+    url: "https://changelog.shopify.com/feed.xml",
+    homeUrl: "https://changelog.shopify.com/",
+  },
+];
+
 const STATE_PATH = resolve("state", "seen.json");
 // The Shopify changelog feed currently carries ~1,800 historical entries and
 // grows slowly. We keep the cap well above that so the full feed always fits
@@ -73,9 +98,29 @@ async function main() {
     );
   }
 
-  console.log(`[digest] fetching ${FEED_URL}`);
-  const entries = await fetchFeed(FEED_URL);
-  console.log(`[digest] parsed ${entries.length} entries from feed`);
+  console.log(
+    `[digest] fetching ${FEEDS.length} feed(s): ${FEEDS.map((f) => f.id).join(", ")}`,
+  );
+  const entriesPerFeed = await Promise.all(
+    FEEDS.map(async (feed) => {
+      try {
+        const items = await fetchFeed(feed);
+        console.log(
+          `[digest]   ${feed.id}: parsed ${items.length} entries from ${feed.url}`,
+        );
+        return items;
+      } catch (err) {
+        // Don't let one broken feed take down the whole digest — log and move
+        // on. The digest for the remaining feed(s) still posts.
+        console.error(
+          `[digest]   ${feed.id}: FAILED to fetch ${feed.url} — ${String(err)}`,
+        );
+        return [] as Entry[];
+      }
+    }),
+  );
+  const entries = entriesPerFeed.flat();
+  console.log(`[digest] ${entries.length} entries across all feeds`);
 
   const state = await loadState();
   const seen = new Set(state.seenIds);
@@ -134,8 +179,8 @@ async function persistState(entries: Entry[], previous: State): Promise<void> {
   console.log(`[digest] state saved (${merged.length} ids tracked).`);
 }
 
-async function fetchFeed(url: string): Promise<Entry[]> {
-  const res = await fetch(url, {
+async function fetchFeed(feed: FeedSpec): Promise<Entry[]> {
+  const res = await fetch(feed.url, {
     headers: {
       "User-Agent": "fiskars-shopify-changelog-digest/0.1",
       Accept: "application/rss+xml, application/xml, text/xml",
@@ -156,10 +201,12 @@ async function fetchFeed(url: string): Promise<Entry[]> {
     : itemsRaw
       ? [itemsRaw]
       : [];
-  return items.map(normalise).filter((e): e is Entry => e !== null);
+  return items
+    .map((raw) => normalise(raw, feed))
+    .filter((e): e is Entry => e !== null);
 }
 
-function normalise(raw: RawRssItem): Entry | null {
+function normalise(raw: RawRssItem, feed: FeedSpec): Entry | null {
   const title = typeof raw.title === "string" ? raw.title.trim() : "";
   const link = typeof raw.link === "string" ? raw.link.trim() : "";
   if (!title || !link) return null;
@@ -171,7 +218,10 @@ function normalise(raw: RawRssItem): Entry | null {
       : typeof guidRaw === "object" && guidRaw && "#text" in guidRaw
         ? String(guidRaw["#text"])
         : "";
-  const id = guid || link;
+  // Prefix with feed id so IDs from different sources can never collide even
+  // if two feeds somehow emit the same guid/link.
+  const rawId = guid || link;
+  const id = `${feed.id}:${rawId}`;
 
   const pub = typeof raw.pubDate === "string" ? raw.pubDate : "";
   let isoDate = new Date().toISOString();
@@ -193,6 +243,7 @@ function normalise(raw: RawRssItem): Entry | null {
 
   return {
     id,
+    source: feed.id,
     title,
     link,
     publishedAt: isoDate,
@@ -227,6 +278,8 @@ function buildDigestMessage(entries: Entry[]): unknown {
     (count === 1 ? "entry" : "entries") +
     (actionCount > 0 ? `  ·  ⚠️ ${actionCount} action required` : "");
 
+  const feedLinks = FEEDS.map((f) => `<${f.homeUrl}|${f.label}>`).join("  ·  ");
+
   const blocks: Array<Record<string, unknown>> = [
     {
       type: "header",
@@ -234,29 +287,34 @@ function buildDigestMessage(entries: Entry[]): unknown {
     },
     {
       type: "context",
-      elements: [{ type: "mrkdwn", text: `*${today}*  ·  <${FEED_URL}|feed>` }],
+      elements: [{ type: "mrkdwn", text: `*${today}*  ·  ${feedLinks}` }],
     },
     { type: "divider" },
   ];
 
-  for (const e of shown) {
-    const date = fmtShortDate(new Date(e.publishedAt));
-    const severity = e.actionRequired ? "🔴" : pickTagIcon(e.tags);
-    const tagBadges = e.tags
-      .slice(0, 4)
-      .map((t) => `\`${escapeMd(t)}\``)
-      .join(" ");
-    const textLines = [
-      `${severity} *<${e.link}|${escapeMd(e.title)}>*`,
-      `${date}${tagBadges ? " · " + tagBadges : ""}`,
-    ];
-    if (e.excerpt) {
-      textLines.push(`> ${truncate(escapeMd(e.excerpt), 260)}`);
+  // Group entries by source so the Slack message is scannable: "here are the
+  // 2 new developer entries, then the 3 new merchant entries". We preserve
+  // the feed order declared in FEEDS rather than alphabetising.
+  const groupedShown = groupBySource(shown);
+  const feedsWithEntries = FEEDS.filter(
+    (f) => (groupedShown.get(f.id)?.length ?? 0) > 0,
+  );
+  const showGroupHeaders = feedsWithEntries.length > 1;
+
+  for (const feed of feedsWithEntries) {
+    const groupEntries = groupedShown.get(feed.id) ?? [];
+    if (showGroupHeaders) {
+      blocks.push({
+        type: "section",
+        text: {
+          type: "mrkdwn",
+          text: `*${feed.label}*  ·  ${groupEntries.length} new`,
+        },
+      });
     }
-    blocks.push({
-      type: "section",
-      text: { type: "mrkdwn", text: textLines.join("\n") },
-    });
+    for (const e of groupEntries) {
+      blocks.push(renderEntryBlock(e));
+    }
   }
 
   if (overflow > 0) {
@@ -265,7 +323,7 @@ function buildDigestMessage(entries: Entry[]): unknown {
       elements: [
         {
           type: "mrkdwn",
-          text: `…and *${overflow}* more. See the full <https://shopify.dev/changelog|changelog>.`,
+          text: `…and *${overflow}* more. See the full ${feedLinks}.`,
         },
       ],
     });
@@ -277,8 +335,39 @@ function buildDigestMessage(entries: Entry[]): unknown {
   };
 }
 
+function renderEntryBlock(e: Entry): Record<string, unknown> {
+  const date = fmtShortDate(new Date(e.publishedAt));
+  const severity = e.actionRequired ? "🔴" : pickTagIcon(e.tags);
+  const tagBadges = e.tags
+    .slice(0, 4)
+    .map((t) => `\`${escapeMd(t)}\``)
+    .join(" ");
+  const textLines = [
+    `${severity} *<${e.link}|${escapeMd(e.title)}>*`,
+    `${date}${tagBadges ? " · " + tagBadges : ""}`,
+  ];
+  if (e.excerpt) {
+    textLines.push(`> ${truncate(escapeMd(e.excerpt), 260)}`);
+  }
+  return {
+    type: "section",
+    text: { type: "mrkdwn", text: textLines.join("\n") },
+  };
+}
+
+function groupBySource(entries: Entry[]): Map<string, Entry[]> {
+  const map = new Map<string, Entry[]>();
+  for (const e of entries) {
+    const list = map.get(e.source) ?? [];
+    list.push(e);
+    map.set(e.source, list);
+  }
+  return map;
+}
+
 function buildEmptyMessage(): unknown {
   const today = fmtHumanDate(new Date());
+  const feedLinks = FEEDS.map((f) => `<${f.homeUrl}|${f.label}>`).join("  ·  ");
   return {
     text: `✅ Shopify Changelog · Nothing new today · ${today}`,
     blocks: [
@@ -287,7 +376,7 @@ function buildEmptyMessage(): unknown {
         elements: [
           {
             type: "mrkdwn",
-            text: `✅ *Shopify Changelog*  ·  Nothing new today  ·  ${today}  ·  <${FEED_URL}|feed>`,
+            text: `✅ *Shopify Changelog*  ·  Nothing new today  ·  ${today}  ·  ${feedLinks}`,
           },
         ],
       },

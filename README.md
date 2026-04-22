@@ -1,6 +1,13 @@
 # fiskars-shopify-changelog-digest
 
-Every weekday at 08:30 Europe/Copenhagen (year-round — DST handled), posts a digest of new [Shopify developer changelog](https://shopify.dev/changelog) entries to a Slack channel. If nothing's new, it still posts a tiny "Nothing new today" note so you know the bot ran.
+Every weekday at 08:30 Europe/Copenhagen (year-round — DST handled), posts a digest of new Shopify changelog entries to a Slack channel. If nothing's new, it still posts a tiny "Nothing new today" note so you know the bot ran.
+
+Covers **both** official Shopify feeds:
+
+- **Developer changelog** — [shopify.dev/changelog](https://shopify.dev/changelog) (API changes, deprecations, new platform features)
+- **Merchant changelog** — [changelog.shopify.com](https://changelog.shopify.com/) (admin, checkout, marketing, analytics updates visible to store owners)
+
+Entries are grouped by source in the Slack message so you can tell at a glance which bucket a change belongs to.
 
 Runs entirely on GitHub Actions — no server, no cron on your machine.
 
@@ -8,12 +15,27 @@ Runs entirely on GitHub Actions — no server, no cron on your machine.
 
 1. GitHub Actions cron is UTC-only, so two weekday crons are scheduled — `30 6 * * 1-5` and `30 7 * * 1-5`. One of them is 08:30 Copenhagen in summer (CEST), the other is 08:30 Copenhagen in winter (CET).
 2. A `--schedule-guard` flag in the script checks the current Europe/Copenhagen hour and skips the run if it isn't 8, so only the correct one posts.
-3. The workflow fetches `https://shopify.dev/changelog/feed.xml`.
-4. Each entry's `guid` is diffed against `state/seen.json` (committed to the repo).
-5. New entries → Slack Block Kit message. No new entries → "Nothing new today" context message.
+3. The workflow fetches every feed listed in `FEEDS` (in `src/digest.ts`) in parallel. If one feed errors, the others still post.
+4. Each entry's id (`<feed-id>:<guid-or-link>`) is diffed against `state/seen.json` (committed to the repo).
+5. New entries → Slack Block Kit message grouped by source. No new entries → "Nothing new today" context message.
 6. Updated `state/seen.json` is committed back so tomorrow's run is a true delta.
 
 Manual runs from the **Actions** tab bypass the timezone guard, so you can always trigger an ad-hoc post for testing.
+
+### Adding / removing feeds
+
+Edit the `FEEDS` array in [`src/digest.ts`](src/digest.ts). Each entry is:
+
+```ts
+{
+  id: "shortname",             // stable; used to prefix entry IDs in state
+  label: "Human-facing name",  // shown as a sub-header in Slack when grouped
+  url: "https://…/feed.xml",   // RSS endpoint (RSS 2.0, as in both Shopify feeds)
+  homeUrl: "https://…",        // landing page linked from the message
+}
+```
+
+Rebuild, commit, push — the next run picks up the new feed. Note that changing a feed's `id` invalidates state entries tied to that id, so entries will re-post. If you ever do that, follow up with a `--mark-seen-only` bootstrap.
 
 ## Setup (one-time)
 
