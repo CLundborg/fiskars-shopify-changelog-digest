@@ -1,5 +1,5 @@
 {
-  "lastRunAt": "2026-04-22T09:21:57.872Z",
+  "lastRunAt": "2026-04-22T09:27:47.614Z",
   "seenIds": [
     "https://shopify.dev/changelog/new-app-submission-experience-in-the-partner-dashboard",
     "https://shopify.dev/changelog/added-mostrelevant-value-for-collectionsortorder",
@@ -97,7 +97,6 @@
     "https://shopify.dev/changelog/migrate-metafields-with-shopify-app-import-custom-data-definitions",
     "https://shopify.dev/changelog/deprecate-deliveryshippingoriginassign-mutation",
     "https://shopify.dev/changelog/enhanced-discount-function-configuration-with-admin-ui-extensions",
-    "https://shopify.dev/changelog/intents-api-for-customer-accounts",
     "https://shopify.dev/changelog/localization-support-for-pos-ui-extensions",
     "https://shopify.dev/changelog/new-return-reason-definitions-api-for-better-return-insights",
     "https://shopify.dev/changelog/introducing-the-orderslinkrequested-webhook-topic",
@@ -497,6 +496,7 @@
     "https://shopify.dev/changelog/hydrogen-december-2024-release",
     "https://shopify.dev/changelog/product-image-resource-in-rest-now-returns-a-media-image-gid-to-streamline-migration-to-graphql",
     "https://shopify.dev/changelog/admin-action-extensions-now-have-access-to-picking-apis",
-    "https://shopify.dev/changelog/deprecation-notice-calculatedorder-for-committed-order-edits"
+    "https://shopify.dev/changelog/deprecation-notice-calculatedorder-for-committed-order-edits",
+    "https://shopify.dev/changelog/intents-api-for-customer-accounts"
   ]
 }
