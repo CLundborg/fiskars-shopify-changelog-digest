@@ -71,6 +71,19 @@ const MAX_ENTRIES_PER_MESSAGE = 40;
 // that routine 5-15 min Actions scheduling delays don't cause a skipped day.
 const SCHEDULE_TARGET_HOUR = 8;
 
+// Shopify occasionally re-adds old entries to the feed with stale pubDates
+// (e.g. re-publishes describing API versions effective years ago, or simple
+// slug/content revisions that change an entry's id). We don't want those
+// showing up in the morning Slack post as "new", so we filter to entries
+// whose pubDate is within this window before rendering. Entries outside the
+// window are still recorded in state so we don't process them again.
+const MAX_ENTRY_AGE_DAYS = 30;
+
+// Known state-id prefixes. Any id in state/seen.json that doesn't start with
+// one of these is legacy data (from before the prefix refactor) and is
+// dropped at load-time so the file stays tidy.
+const KNOWN_SOURCE_PREFIXES = new Set(["dev:", "merchant:"]);
+
 async function main() {
   const dryRun = process.argv.includes("--dry-run");
   const markSeenOnly = process.argv.includes("--mark-seen-only");
@@ -124,14 +137,22 @@ async function main() {
 
   const state = await loadState();
   const seen = new Set(state.seenIds);
-  const newEntries = entries.filter((e) => !seen.has(e.id));
 
-  // Sort newest first
-  newEntries.sort(
-    (a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt),
+  // An entry posts to Slack only if it's both unseen AND recent. "Recent"
+  // guards against Shopify re-publishing old entries with stale pubDates,
+  // which would otherwise look like "new" from our state's perspective.
+  const cutoffMs = Date.now() - MAX_ENTRY_AGE_DAYS * 24 * 60 * 60 * 1000;
+  const unseenEntries = entries.filter((e) => !seen.has(e.id));
+  const newEntries = unseenEntries
+    .filter((e) => Date.parse(e.publishedAt) >= cutoffMs)
+    .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+
+  const filteredOutCount = unseenEntries.length - newEntries.length;
+  console.log(
+    `[digest] ${unseenEntries.length} unseen, ` +
+      `${newEntries.length} recent enough to post ` +
+      `(filtered out ${filteredOutCount} older than ${MAX_ENTRY_AGE_DAYS}d)`,
   );
-
-  console.log(`[digest] ${newEntries.length} new entries since last run`);
 
   if (markSeenOnly) {
     console.log(
@@ -423,9 +444,26 @@ async function loadState(): Promise<State> {
   try {
     const raw = await readFile(STATE_PATH, "utf8");
     const parsed = JSON.parse(raw) as State;
+    const rawIds = Array.isArray(parsed.seenIds) ? parsed.seenIds : [];
+
+    // Self-healing migration: drop any id that doesn't start with a known
+    // source prefix. These are leftovers from before the `dev:` / `merchant:`
+    // prefix refactor and never match anything the current pipeline produces.
+    // Saving the next state write persists the cleaned list back to git.
+    const cleanIds = rawIds.filter((id) =>
+      [...KNOWN_SOURCE_PREFIXES].some((p) => id.startsWith(p)),
+    );
+    const dropped = rawIds.length - cleanIds.length;
+    if (dropped > 0) {
+      console.log(
+        `[digest] state migration: dropped ${dropped} legacy unprefixed id(s) ` +
+          `(file had ${rawIds.length}, keeping ${cleanIds.length}).`,
+      );
+    }
+
     return {
       lastRunAt: parsed.lastRunAt ?? "",
-      seenIds: Array.isArray(parsed.seenIds) ? parsed.seenIds : [],
+      seenIds: cleanIds,
     };
   } catch (err) {
     console.warn(`[digest] could not parse state file: ${String(err)}`);

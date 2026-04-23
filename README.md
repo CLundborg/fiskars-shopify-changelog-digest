@@ -17,8 +17,9 @@ Runs entirely on GitHub Actions — no server, no cron on your machine.
 2. A `--schedule-guard` flag in the script checks the current Europe/Copenhagen hour and skips the run if it isn't 8, so only the correct one posts.
 3. The workflow fetches every feed listed in `FEEDS` (in `src/digest.ts`) in parallel. If one feed errors, the others still post.
 4. Each entry's id (`<feed-id>:<guid-or-link>`) is diffed against `state/seen.json` (committed to the repo).
-5. New entries → Slack Block Kit message grouped by source. No new entries → no Slack message at all (the workflow run itself still succeeds, visible in the Actions tab).
-6. Updated `state/seen.json` is committed back so tomorrow's run is a true delta.
+5. Entries are also filtered by age — anything with a `pubDate` older than `MAX_ENTRY_AGE_DAYS` (30 days by default) is skipped even if unseen. This prevents Shopify's occasional re-publishing of ancient entries with stale pubDates from leaking into the morning post.
+6. New + recent entries → Slack Block Kit message grouped by source. No new entries → no Slack message at all (the workflow run itself still succeeds, visible in the Actions tab).
+7. Updated `state/seen.json` is committed back so tomorrow's run is a true delta. On load the file is migrated: any id not starting with a known feed prefix is dropped, so legacy/stale entries get cleaned up automatically.
 
 Manual runs from the **Actions** tab bypass the timezone guard, so you can always trigger an ad-hoc post for testing.
 
