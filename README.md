@@ -1,6 +1,6 @@
 # fiskars-shopify-changelog-digest
 
-Every weekday at 08:30 Europe/Copenhagen (year-round — DST handled), posts a digest of new Shopify changelog entries to a Slack channel. If nothing's new, it still posts a tiny "Nothing new today" note so you know the bot ran.
+Every weekday at 08:30 Europe/Copenhagen (year-round — DST handled), posts a digest of new Shopify changelog entries to a Slack channel. If nothing new was published since yesterday's run, the workflow stays silent — no Slack noise on quiet days.
 
 Covers **both** official Shopify feeds:
 
@@ -17,7 +17,7 @@ Runs entirely on GitHub Actions — no server, no cron on your machine.
 2. A `--schedule-guard` flag in the script checks the current Europe/Copenhagen hour and skips the run if it isn't 8, so only the correct one posts.
 3. The workflow fetches every feed listed in `FEEDS` (in `src/digest.ts`) in parallel. If one feed errors, the others still post.
 4. Each entry's id (`<feed-id>:<guid-or-link>`) is diffed against `state/seen.json` (committed to the repo).
-5. New entries → Slack Block Kit message grouped by source. No new entries → "Nothing new today" context message.
+5. New entries → Slack Block Kit message grouped by source. No new entries → no Slack message at all (the workflow run itself still succeeds, visible in the Actions tab).
 6. Updated `state/seen.json` is committed back so tomorrow's run is a true delta.
 
 Manual runs from the **Actions** tab bypass the timezone guard, so you can always trigger an ad-hoc post for testing.

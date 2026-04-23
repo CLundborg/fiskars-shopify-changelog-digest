@@ -141,10 +141,15 @@ async function main() {
     return;
   }
 
-  const payload =
-    newEntries.length > 0
-      ? buildDigestMessage(newEntries)
-      : buildEmptyMessage();
+  if (newEntries.length === 0) {
+    console.log(`[digest] nothing new — not posting to Slack.`);
+    // Still persist state so any feed additions we discovered (e.g. after a
+    // new feed was added to FEEDS) are recorded and don't re-surface later.
+    await persistState(entries, state);
+    return;
+  }
+
+  const payload = buildDigestMessage(newEntries);
 
   if (dryRun) {
     console.log("[digest] --dry-run, not posting. Payload:");
@@ -363,25 +368,6 @@ function groupBySource(entries: Entry[]): Map<string, Entry[]> {
     map.set(e.source, list);
   }
   return map;
-}
-
-function buildEmptyMessage(): unknown {
-  const today = fmtHumanDate(new Date());
-  const feedLinks = FEEDS.map((f) => `<${f.homeUrl}|${f.label}>`).join("  ·  ");
-  return {
-    text: `✅ Shopify Changelog · Nothing new today · ${today}`,
-    blocks: [
-      {
-        type: "context",
-        elements: [
-          {
-            type: "mrkdwn",
-            text: `✅ *Shopify Changelog*  ·  Nothing new today  ·  ${today}  ·  ${feedLinks}`,
-          },
-        ],
-      },
-    ],
-  };
 }
 
 function pickTagIcon(tags: string[]): string {
