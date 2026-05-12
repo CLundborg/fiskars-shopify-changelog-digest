@@ -26,6 +26,9 @@ interface Entry {
 
 interface State {
   lastRunAt: string;
+  // YYYY-MM-DD in Europe/Copenhagen. Set on the run that actually posted to
+  // Slack; used by --once-per-day to suppress later runs the same day.
+  lastPostedDate?: string;
   seenIds: string[];
 }
 
@@ -64,13 +67,6 @@ const MAX_SEEN = 10000;
 // and a potential 1 for an overflow footer, so keep ≤46 entries per message.
 const MAX_ENTRIES_PER_MESSAGE = 40;
 
-// We want the digest posted at 08:30 Europe/Copenhagen year-round, but GitHub
-// Actions cron is UTC-only, so we schedule two weekday crons (one for CEST,
-// one for CET) and let the script drop the one that isn't actually morning
-// Copenhagen time. The "target hour" is 8, with a small tolerance band so
-// that routine 5-15 min Actions scheduling delays don't cause a skipped day.
-const SCHEDULE_TARGET_HOUR = 8;
-
 // Shopify occasionally re-adds old entries to the feed with stale pubDates
 // (e.g. re-publishes describing API versions effective years ago, or simple
 // slug/content revisions that change an entry's id). We don't want those
@@ -87,7 +83,7 @@ const KNOWN_SOURCE_PREFIXES = new Set(["dev:", "merchant:"]);
 async function main() {
   const dryRun = process.argv.includes("--dry-run");
   const markSeenOnly = process.argv.includes("--mark-seen-only");
-  const scheduleGuard = process.argv.includes("--schedule-guard");
+  const oncePerDay = process.argv.includes("--once-per-day");
   const webhook = process.env["SLACK_WEBHOOK_URL"];
 
   if (!dryRun && !markSeenOnly && !webhook) {
@@ -97,18 +93,20 @@ async function main() {
     process.exit(2);
   }
 
-  if (scheduleGuard) {
-    const hour = getCopenhagenHour();
-    if (hour !== SCHEDULE_TARGET_HOUR) {
+  const state = await loadState();
+
+  // GitHub Actions cron is UTC-only AND can be delayed by hours under load, so
+  // we schedule two weekday crons (one each for CEST / CET) and let whichever
+  // one fires first actually post. --once-per-day records the Copenhagen date
+  // of the post in state, and any later run the same day short-circuits here.
+  if (oncePerDay) {
+    const today = getCopenhagenDate();
+    if (state.lastPostedDate === today) {
       console.log(
-        `[digest] --schedule-guard: current Europe/Copenhagen hour is ${hour}, ` +
-          `target is ${SCHEDULE_TARGET_HOUR}. Skipping this run.`,
+        `[digest] --once-per-day: already posted on ${today}. Skipping this run.`,
       );
       return;
     }
-    console.log(
-      `[digest] --schedule-guard: Europe/Copenhagen hour is ${hour}, proceeding.`,
-    );
   }
 
   console.log(
@@ -135,7 +133,6 @@ async function main() {
   const entries = entriesPerFeed.flat();
   console.log(`[digest] ${entries.length} entries across all feeds`);
 
-  const state = await loadState();
   const seen = new Set(state.seenIds);
 
   // An entry posts to Slack only if it's both unseen AND recent. "Recent"
@@ -158,7 +155,7 @@ async function main() {
     console.log(
       `[digest] --mark-seen-only: recording ${entries.length} entries as seen without posting.`,
     );
-    await persistState(entries, state);
+    await persistState(entries, state, false);
     return;
   }
 
@@ -166,7 +163,7 @@ async function main() {
     console.log(`[digest] nothing new — not posting to Slack.`);
     // Still persist state so any feed additions we discovered (e.g. after a
     // new feed was added to FEEDS) are recorded and don't re-surface later.
-    await persistState(entries, state);
+    await persistState(entries, state, false);
     return;
   }
 
@@ -182,10 +179,14 @@ async function main() {
   await postToSlack(webhook!, payload);
   console.log(`[digest] posted.`);
 
-  await persistState(entries, state);
+  await persistState(entries, state, true);
 }
 
-async function persistState(entries: Entry[], previous: State): Promise<void> {
+async function persistState(
+  entries: Entry[],
+  previous: State,
+  posted: boolean,
+): Promise<void> {
   // Keep the most recent MAX_SEEN ids so the file doesn't grow forever, but
   // union with previously-seen so a feed trim can't cause us to re-announce
   // older entries.
@@ -200,6 +201,7 @@ async function persistState(entries: Entry[], previous: State): Promise<void> {
   );
   await saveState({
     lastRunAt: new Date().toISOString(),
+    lastPostedDate: posted ? getCopenhagenDate() : previous.lastPostedDate,
     seenIds: merged,
   });
   console.log(`[digest] state saved (${merged.length} ids tracked).`);
@@ -408,15 +410,15 @@ function truncate(s: string, n: number): string {
   return s.length > n ? s.slice(0, n - 1) + "…" : s;
 }
 
-function getCopenhagenHour(d: Date = new Date()): number {
-  const parts = new Intl.DateTimeFormat("en-GB", {
+function getCopenhagenDate(d: Date = new Date()): string {
+  // YYYY-MM-DD in Europe/Copenhagen. "en-CA" yields ISO-style output regardless
+  // of host locale, so this is stable across runners.
+  return new Intl.DateTimeFormat("en-CA", {
     timeZone: "Europe/Copenhagen",
-    hour: "2-digit",
-    hour12: false,
-  }).formatToParts(d);
-  const hour = parts.find((p) => p.type === "hour")?.value ?? "0";
-  // "en-GB" with hour12:false returns "00"–"23".
-  return parseInt(hour, 10);
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(d);
 }
 
 function fmtHumanDate(d: Date): string {
@@ -463,6 +465,7 @@ async function loadState(): Promise<State> {
 
     return {
       lastRunAt: parsed.lastRunAt ?? "",
+      lastPostedDate: parsed.lastPostedDate,
       seenIds: cleanIds,
     };
   } catch (err) {

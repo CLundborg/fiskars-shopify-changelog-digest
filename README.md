@@ -13,15 +13,15 @@ Runs entirely on GitHub Actions — no server, no cron on your machine.
 
 ## How it works
 
-1. GitHub Actions cron is UTC-only, so two weekday crons are scheduled — `30 6 * * 1-5` and `30 7 * * 1-5`. One of them is 08:30 Copenhagen in summer (CEST), the other is 08:30 Copenhagen in winter (CET).
-2. A `--schedule-guard` flag in the script checks the current Europe/Copenhagen hour and skips the run if it isn't 8, so only the correct one posts.
+1. GitHub Actions cron is UTC-only, so two weekday crons are scheduled — `30 6 * * 1-5` and `30 7 * * 1-5`. One is the 08:30 Copenhagen morning slot in summer (CEST), the other in winter (CET). GitHub-hosted scheduled runs are also commonly delayed by 1–3 hours under load, so we treat them as "fire sometime this morning" rather than "fire at 08:30".
+2. The script records the Copenhagen date of each successful Slack post in `state/seen.json` (`lastPostedDate`). On scheduled runs the `--once-per-day` flag short-circuits if that date is already today, so only the first run of each weekday posts.
 3. The workflow fetches every feed listed in `FEEDS` (in `src/digest.ts`) in parallel. If one feed errors, the others still post.
 4. Each entry's id (`<feed-id>:<guid-or-link>`) is diffed against `state/seen.json` (committed to the repo).
 5. Entries are also filtered by age — anything with a `pubDate` older than `MAX_ENTRY_AGE_DAYS` (30 days by default) is skipped even if unseen. This prevents Shopify's occasional re-publishing of ancient entries with stale pubDates from leaking into the morning post.
 6. New + recent entries → Slack Block Kit message grouped by source. No new entries → no Slack message at all (the workflow run itself still succeeds, visible in the Actions tab).
 7. Updated `state/seen.json` is committed back so tomorrow's run is a true delta. On load the file is migrated: any id not starting with a known feed prefix is dropped, so legacy/stale entries get cleaned up automatically.
 
-Manual runs from the **Actions** tab bypass the timezone guard, so you can always trigger an ad-hoc post for testing.
+Manual runs from the **Actions** tab bypass the once-per-day gate, so you can always trigger an ad-hoc post for testing.
 
 ### Adding / removing feeds
 
@@ -88,16 +88,11 @@ npm run dry-run
 
 ### Schedule
 
-Default: **08:30 Europe/Copenhagen, Mon–Fri**, implemented via two UTC crons + a timezone guard (see "How it works" above).
+Default: **one post per weekday morning Europe/Copenhagen**, fired by whichever of two UTC crons GitHub Actions gets around to running first (see "How it works" above). Posting is gated on Copenhagen date, not clock hour, so a delayed runner still posts that morning rather than skipping the day.
 
-To change the target local hour, edit both:
+To shift the target window, edit the two `cron:` lines in `.github/workflows/daily-digest.yml` — pick UTC offsets that cover both CEST/CET for your desired local hour. To change weekdays → every day, swap `1-5` for `*` in both cron entries.
 
-1. The two `cron:` lines in `.github/workflows/daily-digest.yml` (pick UTC offsets that cover both CEST/CET for your desired local hour).
-2. The `SCHEDULE_TARGET_HOUR` constant in `src/digest.ts`.
-
-To change weekdays → every day, swap `1-5` for `*` in both cron entries.
-
-[Crontab guru](https://crontab.guru) is handy for building UTC expressions. Note that GitHub Actions scheduled runs can be delayed 5–15 minutes under load — this is documented behaviour, not a bug.
+[Crontab guru](https://crontab.guru) is handy for building UTC expressions. Note that GitHub-hosted scheduled runs are frequently delayed under load — sometimes by hours, not minutes — so don't rely on the cron's wall-clock time landing precisely.
 
 ### Slack message format
 
