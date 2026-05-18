@@ -1,7 +1,8 @@
 {
-  "lastRunAt": "2026-05-15T09:26:26.678Z",
-  "lastPostedDate": "2026-05-15",
+  "lastRunAt": "2026-05-18T10:44:33.775Z",
+  "lastPostedDate": "2026-05-18",
   "seenIds": [
+    "merchant:https://changelog.shopify.com/posts/sell-from-multiple-legal-entities-in-the-same-country-using-shopify-payments",
     "merchant:https://changelog.shopify.com/posts/flow-sidekick-generates-test-cases-for-your-workflows",
     "merchant:https://changelog.shopify.com/posts/enhanced-balance-app-design",
     "merchant:https://changelog.shopify.com/posts/italy-s-sardinian-province-definitions-updated",
@@ -10,7 +11,6 @@
     "merchant:https://changelog.shopify.com/posts/shopify-tax-has-expanded-to-canada",
     "merchant:https://changelog.shopify.com/posts/draft-unified-branding-customization-across-checkout-and-customer-accounts",
     "dev:https://shopify.dev/changelog/new-productunavailableinbuyerlocation-warning-code-in-the-storefront-api-cart",
-    "merchant:https://changelog.shopify.com/posts/more-shopify-payments-methods-available-in-shop-pay-checkout",
     "merchant:https://changelog.shopify.com/posts/simpler-inventory-transfers",
     "merchant:https://changelog.shopify.com/posts/print-packing-slips-for-inventory-transfers",
     "merchant:https://changelog.shopify.com/posts/a-new-home-for-agentic-storefronts-in-your-admin",
@@ -3333,6 +3333,7 @@
     "dev:https://shopify.dev/changelog/the-discounts-resource-has-been-deprecated",
     "dev:https://shopify.dev/changelog/hosted-payment-sdk-requests-will-include-a-new-key-value-pair-for-locale",
     "dev:https://shopify.dev/changelog/the-order-resource-now-validates-key-properties-for-the-shipping-and-billing-addresses",
+    "merchant:https://changelog.shopify.com/posts/more-shopify-payments-methods-available-in-shop-pay-checkout",
     "dev:https://shopify.dev/changelog/the-storefront-apis-cart-object-now-exposes-warnings-for-unavailable-delivery-options",
     "dev:https://shopify.dev/changelog/ship-carry-out-in-a-single-order-on-pos-is-now-available-for-retail-pro-merchants-using-eligible-tax-software",
     "dev:https://shopify.dev/changelog/search-and-predictive-search-are-now-available-on-storefront-api",
