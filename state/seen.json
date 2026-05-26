@@ -1,7 +1,8 @@
 {
-  "lastRunAt": "2026-05-25T11:32:33.098Z",
-  "lastPostedDate": "2026-05-22",
+  "lastRunAt": "2026-05-26T10:31:26.125Z",
+  "lastPostedDate": "2026-05-26",
   "seenIds": [
+    "merchant:https://changelog.shopify.com/posts/clearer-payout-balance-and-reserve-information-in-shopify-payments",
     "dev:https://shopify.dev/changelog/next-generation-events-now-available-in-developer-preview",
     "dev:https://shopify.dev/changelog/shopify-cli-40-semver-auto-updates-removing-deprecated-flags-and-commands",
     "merchant:https://changelog.shopify.com/posts/draft-a-refreshed-sign-in-page-for-customer-accounts-now-customizable-in-the-editor",
