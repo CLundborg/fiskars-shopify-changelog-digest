@@ -1,5 +1,5 @@
 {
-  "lastRunAt": "2026-05-27T10:34:03.600Z",
+  "lastRunAt": "2026-05-27T11:02:22.313Z",
   "lastPostedDate": "2026-05-26",
   "seenIds": [
     "merchant:https://changelog.shopify.com/posts/clearer-payout-balance-and-reserve-information-in-shopify-payments",
@@ -1106,8 +1106,8 @@
     "dev:https://shopify.dev/changelog/new-has_variants_that_requires_components-field-on-product-webhooks",
     "dev:https://shopify.dev/changelog/new-field-and-queries-for-the-staffmember-object-in-the-graphql-admin-api",
     "dev:https://shopify.dev/changelog/removal-fulfillment-service-shipping-method",
-    "dev:https://shopify.dev/changelog/pos-ui-extensions-2024-10-update",
     "dev:https://shopify.dev/changelog/new-mutation-to-create-an-order",
+    "dev:https://shopify.dev/changelog/pos-ui-extensions-2024-10-update",
     "dev:https://shopify.dev/changelog/fulfillment-constraints-can-now-be-associated-with-one-or-multiple-delivery-methods",
     "dev:https://shopify.dev/changelog/fulfillment-constraints-now-support-local-pickup",
     "dev:https://shopify.dev/changelog/admin-api-update-on-fulfillmentorder-destination-and-fulfillmentorderdestination-object",
@@ -1136,8 +1136,8 @@
     "dev:https://shopify.dev/changelog/new-created_fulfillment_hold-field-on-fulfillment_orders-placed_on_hold-webhook",
     "dev:https://shopify.dev/changelog/new-webhook-topic-app-scopes_update",
     "dev:https://shopify.dev/changelog/cart-warnings-in-storefront-api-cart",
-    "dev:https://shopify.dev/changelog/add-subscription-status-updates-to-bulkoperationrunmutation",
     "dev:https://shopify.dev/changelog/querying-events-through-the-events-connection-and-commentevent-subject-becomes-nullable",
+    "dev:https://shopify.dev/changelog/add-subscription-status-updates-to-bulkoperationrunmutation",
     "dev:https://shopify.dev/changelog/productinput-split-into-productcreateinput-and-productupdateinput-in-2024-10",
     "dev:https://shopify.dev/changelog/admin-graphql-api-new-apis-for-pages-articles-blogs-and-comments-now-available-in-2024-10",
     "merchant:https://changelog.shopify.com/posts/files-admin-user-permission-is-now-generally-available",
