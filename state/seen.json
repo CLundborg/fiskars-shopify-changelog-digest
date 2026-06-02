@@ -1,5 +1,5 @@
 {
-  "lastRunAt": "2026-06-02T10:59:54.384Z",
+  "lastRunAt": "2026-06-02T11:46:41.142Z",
   "lastPostedDate": "2026-05-29",
   "seenIds": [
     "dev:https://shopify.dev/changelog/bots-and-agents-should-identify-themselves-via-web-bot-auth",
@@ -1110,8 +1110,8 @@
     "dev:https://shopify.dev/changelog/new-has_variants_that_requires_components-field-on-product-webhooks",
     "dev:https://shopify.dev/changelog/new-field-and-queries-for-the-staffmember-object-in-the-graphql-admin-api",
     "dev:https://shopify.dev/changelog/removal-fulfillment-service-shipping-method",
-    "dev:https://shopify.dev/changelog/pos-ui-extensions-2024-10-update",
     "dev:https://shopify.dev/changelog/new-mutation-to-create-an-order",
+    "dev:https://shopify.dev/changelog/pos-ui-extensions-2024-10-update",
     "dev:https://shopify.dev/changelog/fulfillment-constraints-can-now-be-associated-with-one-or-multiple-delivery-methods",
     "dev:https://shopify.dev/changelog/fulfillment-constraints-now-support-local-pickup",
     "dev:https://shopify.dev/changelog/admin-api-update-on-fulfillmentorder-destination-and-fulfillmentorderdestination-object",
