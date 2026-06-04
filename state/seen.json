@@ -1,5 +1,5 @@
 {
-  "lastRunAt": "2026-06-04T10:13:44.127Z",
+  "lastRunAt": "2026-06-04T10:45:51.120Z",
   "lastPostedDate": "2026-06-03",
   "seenIds": [
     "dev:https://shopify.dev/changelog/app-quality-checks-now-managed-in-partner-dashboard",
@@ -747,7 +747,6 @@
     "dev:https://shopify.dev/changelog/orders-number-and-customer-graphql-update",
     "dev:https://shopify.dev/changelog/stable-graphql-api-versions-to-backfill-enum-values",
     "merchant:https://changelog.shopify.com/posts/ship-and-carryout-in-a-single-order-on-pos",
-    "dev:https://shopify.dev/changelog/fulfillment-order-cancel-error-codes",
     "dev:https://shopify.dev/changelog/new-range-fields-available-for-segment-filters-in-graphql-admin-api",
     "dev:https://shopify.dev/changelog/new-appuninstall-mutation-to-allow-apps-to-uninstall-themselves",
     "dev:https://shopify.dev/changelog/returns-processing-api",
@@ -759,6 +758,7 @@
     "dev:https://shopify.dev/changelog/productset-and-customerset-mutations-now-support-upserts",
     "dev:https://shopify.dev/changelog/new-finance-kyc-information-field-available-for-shopify-approved-finance-apps",
     "dev:https://shopify.dev/changelog/customer-rfm-group-now-available-in-graphql-admin-api",
+    "dev:https://shopify.dev/changelog/draftordercount-available-in-2025-07",
     "dev:https://shopify.dev/changelog/exposed-incontext-directive-with-the-customer-account-api",
     "dev:https://shopify.dev/changelog/add-new-customerpaymentmethodrevocationreasons",
     "dev:https://shopify.dev/changelog/new-theme-file-metadata-fields-added-to-onlinestorethemefileoperationresult-object",
@@ -3336,8 +3336,8 @@
     "dev:https://shopify.dev/changelog/the-discounts-resource-has-been-deprecated",
     "dev:https://shopify.dev/changelog/hosted-payment-sdk-requests-will-include-a-new-key-value-pair-for-locale",
     "dev:https://shopify.dev/changelog/the-order-resource-now-validates-key-properties-for-the-shipping-and-billing-addresses",
+    "dev:https://shopify.dev/changelog/fulfillment-order-cancel-error-codes",
     "dev:https://shopify.dev/changelog/payment-session-payloads-now-include-iso-3166-2-province-codes",
-    "dev:https://shopify.dev/changelog/draftordercount-available-in-2025-07",
     "dev:https://shopify.dev/changelog/introducing-the-new-customer-account-api-in-developer-preview",
     "dev:https://shopify.dev/changelog/update-carrier-service-api-access-for-stores-on-starter-and-basic-plans",
     "dev:https://shopify.dev/changelog/new-credit-card-fields-added-to-transaction-s-payment-details",
