@@ -1,7 +1,8 @@
 {
-  "lastRunAt": "2026-06-22T12:29:09.568Z",
-  "lastPostedDate": "2026-06-22",
+  "lastRunAt": "2026-06-23T10:07:49.105Z",
+  "lastPostedDate": "2026-06-23",
   "seenIds": [
+    "merchant:https://changelog.shopify.com/posts/purchase-orders-now-create-transfers-to-move-inventory",
     "dev:https://shopify.dev/changelog/removal-of-itemnotstockedatlocation-error",
     "dev:https://shopify.dev/changelog/flow-action-extensions-now-support-relative-paths-for-endpoint-urls",
     "merchant:https://changelog.shopify.com/posts/self-serve-returns-now-support-cancellations",
