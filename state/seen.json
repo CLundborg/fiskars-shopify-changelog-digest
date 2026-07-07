@@ -1,7 +1,10 @@
 {
-  "lastRunAt": "2026-07-06T11:09:46.181Z",
-  "lastPostedDate": "2026-07-06",
+  "lastRunAt": "2026-07-07T10:03:37.722Z",
+  "lastPostedDate": "2026-07-07",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/updated-app-store-requirements-13-always-use-honest-and-transparent-review-practices",
+    "dev:https://shopify.dev/changelog/customer-account-api-last-incomplete-checkout-and-checkout-types-removed",
+    "dev:https://shopify.dev/changelog/markets-apis-now-support-marketregionsubdivision",
     "dev:https://shopify.dev/changelog/orderdisplayfulfillmentstatus-now-returns-fulfillmentnotrequired",
     "dev:https://shopify.dev/changelog/shop-minis-may-june-2026-update",
     "dev:https://shopify.dev/changelog/market-driven-shipping-now-available-in-feature-preview",
@@ -17,7 +20,6 @@
     "dev:https://shopify.dev/changelog/hydrogen-now-deploys-to-vercel",
     "dev:https://shopify.dev/changelog/order-attribution-definitions-are-available-in-order-channel-filters",
     "merchant:https://changelog.shopify.com/posts/define-and-manage-metafields-on-inventory-transfers",
-    "merchant:https://changelog.shopify.com/posts/use-location-metafields-as-dimensions-and-filters-in-analytics",
     "merchant:https://changelog.shopify.com/posts/filter-and-group-your-reports-by-physical-storefront",
     "merchant:https://changelog.shopify.com/posts/view-data-access-changes-with-the-new-app-pixel-activity-log",
     "merchant:https://changelog.shopify.com/posts/pos-activity-log",
@@ -3451,6 +3453,7 @@
     "dev:https://shopify.dev/changelog/the-discounts-resource-has-been-deprecated",
     "dev:https://shopify.dev/changelog/hosted-payment-sdk-requests-will-include-a-new-key-value-pair-for-locale",
     "dev:https://shopify.dev/changelog/the-order-resource-now-validates-key-properties-for-the-shipping-and-billing-addresses",
+    "merchant:https://changelog.shopify.com/posts/use-location-metafields-as-dimensions-and-filters-in-analytics",
     "merchant:https://changelog.shopify.com/posts/more-shopify-payments-methods-available-in-shop-pay-checkout",
     "dev:https://shopify.dev/changelog/the-storefront-apis-cart-object-now-exposes-warnings-for-unavailable-delivery-options",
     "merchant:https://changelog.shopify.com/posts/collect-newfoundland-vapour-products-tax-automatically"
