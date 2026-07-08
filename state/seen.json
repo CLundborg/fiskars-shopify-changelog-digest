@@ -1,11 +1,16 @@
 {
-  "lastRunAt": "2026-07-07T10:03:37.722Z",
-  "lastPostedDate": "2026-07-07",
+  "lastRunAt": "2026-07-08T09:03:32.605Z",
+  "lastPostedDate": "2026-07-08",
   "seenIds": [
+    "merchant:https://changelog.shopify.com/posts/see-your-pos-selling-environment-health-at-a-glance",
+    "dev:https://shopify.dev/changelog/shopify-flow-changes-to-action-extensions-result-in-fewer-breaking-changes",
+    "dev:https://shopify.dev/changelog/shopify-flow-action-runtime-urls-now-update-automatically",
+    "merchant:https://changelog.shopify.com/posts/new-and-updated-staff-permissions-for-payments-payouts-disputes-and-tax-documents",
     "dev:https://shopify.dev/changelog/updated-app-store-requirements-13-always-use-honest-and-transparent-review-practices",
     "dev:https://shopify.dev/changelog/customer-account-api-last-incomplete-checkout-and-checkout-types-removed",
     "dev:https://shopify.dev/changelog/markets-apis-now-support-marketregionsubdivision",
     "dev:https://shopify.dev/changelog/orderdisplayfulfillmentstatus-now-returns-fulfillmentnotrequired",
+    "dev:https://shopify.dev/changelog/deprecating-the-usebuyerjourneyintercept-api-on-checkout-ui-extensions",
     "dev:https://shopify.dev/changelog/shop-minis-may-june-2026-update",
     "dev:https://shopify.dev/changelog/market-driven-shipping-now-available-in-feature-preview",
     "dev:https://shopify.dev/changelog/draft-order-deposit-fields-now-available-in-the-admin-and-customer-account-graphql-apis",
