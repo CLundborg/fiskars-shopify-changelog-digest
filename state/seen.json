@@ -1,7 +1,10 @@
 {
-  "lastRunAt": "2026-07-09T10:04:20.490Z",
-  "lastPostedDate": "2026-07-09",
+  "lastRunAt": "2026-07-10T09:56:55.321Z",
+  "lastPostedDate": "2026-07-10",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/pos-extensions-now-supports-a-background-extension-target",
+    "dev:https://shopify.dev/changelog/identity-verification-for-partners",
+    "dev:https://shopify.dev/changelog/app-pricing-more-plans-no-charge-plan-testing-and-negative-and-fractional-app-events",
     "merchant:https://changelog.shopify.com/posts/security-update-shopify-mobile-app-ios-android",
     "dev:https://shopify.dev/changelog/pos-ui-extensions-2026-07-uses-per-unit-fixed-amount-line-item-discounts",
     "merchant:https://changelog.shopify.com/posts/see-your-pos-selling-environment-health-at-a-glance",
@@ -47,6 +50,7 @@
     "merchant:https://changelog.shopify.com/posts/updated-disclosure-for-subscription-purchases-on-checkout",
     "dev:https://shopify.dev/changelog/new-purchasetype-and-recurringcyclelimit-fields-available-in-the-discount-ui-extension-api",
     "merchant:https://changelog.shopify.com/posts/the-spring-26-edition-is-live",
+    "dev:https://shopify.dev/changelog/shopify-s-spring-26-edition-everywhere",
     "dev:https://shopify.dev/changelog/intents-api-file-picker",
     "dev:https://shopify.dev/changelog/admin-graphql-api-now-supports-app-owned-delivery-profiles-that-cover-all-shippable-items",
     "dev:https://shopify.dev/changelog/define-and-set-metafields-on-inventory-transfers-in-the-admin-graphql-api",
