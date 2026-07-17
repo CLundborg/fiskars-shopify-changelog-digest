@@ -1,7 +1,9 @@
 {
-  "lastRunAt": "2026-07-16T08:37:13.650Z",
-  "lastPostedDate": "2026-07-16",
+  "lastRunAt": "2026-07-17T08:31:28.032Z",
+  "lastPostedDate": "2026-07-17",
   "seenIds": [
+    "merchant:https://changelog.shopify.com/posts/shopify-managed-markets-now-supports-eu-buyer-cancellation-and-return-requests",
+    "dev:https://shopify.dev/changelog/card-deposit-endpoint-now-requires-mtls-certificate",
     "dev:https://shopify.dev/changelog/updated-app-store-requirements-4-1-2-use-a-unique-name-for-your-app",
     "dev:https://shopify.dev/changelog/new-channelid-argument-for-incontext-directive-in-storefront-api-2026-10",
     "dev:https://shopify.dev/changelog/new-fields-on-exchangelineitem",
@@ -1369,7 +1371,6 @@
     "dev:https://shopify.dev/changelog/breaking-changes-in-several-productvariant-related-mutations-in-version-2024-10",
     "dev:https://shopify.dev/changelog/breaking-changes-to-graphql-product-duplicate-apis-in-version-2024-10",
     "dev:https://shopify.dev/changelog/added-synchronous-parameter-to-productdelete-mutation-and-introduced-productdeleteoperation-object-for-asynchronous-deletion-tracking",
-    "dev:https://shopify.dev/changelog/liquid-structured_data-filter-supports-productgroup",
     "merchant:https://changelog.shopify.com/posts/cash-tracking-across-locations-in-pos",
     "merchant:https://changelog.shopify.com/posts/3d-models-and-videos-are-now-hosted-behind-store-urls",
     "merchant:https://changelog.shopify.com/posts/faster-filtering-for-b2b-customer-data",
@@ -2344,6 +2345,7 @@
     "merchant:https://changelog.shopify.com/posts/include-more-of-your-product-images-with-the-updated-buy-button-template",
     "merchant:https://changelog.shopify.com/posts/bxgy-discounts-just-got-even-better",
     "merchant:https://changelog.shopify.com/posts/app-trial-duration-and-billing-information",
+    "dev:https://shopify.dev/changelog/liquid-structured_data-filter-supports-productgroup",
     "dev:https://shopify.dev/changelog/fulfillment-order-release-hold-mutation-error-codes-deprecated",
     "dev:https://shopify.dev/changelog/hydrogen-july-2024-release",
     "dev:https://shopify.dev/changelog/graphql-admin-api-new-field-product-restrictedforresource-added",
