@@ -1,7 +1,10 @@
 {
-  "lastRunAt": "2026-07-21T09:56:27.840Z",
-  "lastPostedDate": "2026-07-20",
+  "lastRunAt": "2026-07-22T09:04:56.159Z",
+  "lastPostedDate": "2026-07-22",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/metafield-triggers-and-additional-topics-are-now-available-for-events",
+    "dev:https://shopify.dev/changelog/developer-preview-liquid-block-and-partial-tags",
+    "dev:https://shopify.dev/changelog/full-stack-capabilities-to-power-app-analytics",
     "dev:https://shopify.dev/changelog/physical-inventory-feature-preview",
     "merchant:https://changelog.shopify.com/posts/shopify-managed-markets-now-supports-eu-buyer-cancellation-and-return-requests",
     "dev:https://shopify.dev/changelog/card-deposit-endpoint-now-requires-mtls-certificate",
