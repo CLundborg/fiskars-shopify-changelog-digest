@@ -1,5 +1,5 @@
 {
-  "lastRunAt": "2026-07-28T09:12:50.419Z",
+  "lastRunAt": "2026-07-29T09:18:06.716Z",
   "lastPostedDate": "2026-07-28",
   "seenIds": [
     "merchant:https://changelog.shopify.com/posts/add-a-bank-account-for-every-payout-currency",
@@ -50,6 +50,7 @@
     "dev:https://shopify.dev/changelog/businessentity-now-exposes-legalentityid-in-the-admin-api",
     "dev:https://shopify.dev/changelog/merchant-owned-delivery-profile-apis-are-deprecated-for-market-driven-shipping",
     "merchant:https://changelog.shopify.com/posts/brazil-cnpj-validation-now-supports-alphanumeric-identifiers",
+    "dev:https://shopify.dev/changelog/market-driven-delivery-profiles-admin-api",
     "dev:https://shopify.dev/changelog/hydrogen-now-deploys-to-vercel",
     "dev:https://shopify.dev/changelog/order-attribution-definitions-are-available-in-order-channel-filters",
     "merchant:https://changelog.shopify.com/posts/filter-and-group-your-reports-by-physical-storefront",
@@ -2349,7 +2350,6 @@
     "merchant:https://changelog.shopify.com/posts/include-more-of-your-product-images-with-the-updated-buy-button-template",
     "merchant:https://changelog.shopify.com/posts/bxgy-discounts-just-got-even-better",
     "merchant:https://changelog.shopify.com/posts/app-trial-duration-and-billing-information",
-    "dev:https://shopify.dev/changelog/market-driven-delivery-profiles-admin-api",
     "dev:https://shopify.dev/changelog/removing-deprecated-private-and-publicread-enums-on-metaobject-definitions",
     "dev:https://shopify.dev/changelog/30-more-categories-now-support-structured-app-category-details",
     "dev:https://shopify.dev/changelog/additional-address-fields-in-checkout",
