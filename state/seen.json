@@ -1,7 +1,11 @@
 {
-  "lastRunAt": "2026-07-30T09:09:00.807Z",
-  "lastPostedDate": "2026-07-30",
+  "lastRunAt": "2026-07-31T09:21:25.843Z",
+  "lastPostedDate": "2026-07-31",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/partner-details-on-collaborator-requests",
+    "dev:https://shopify.dev/changelog/the-shopify-account-component-for-customer-accounts-is-now-a-theme-store-requirement",
+    "dev:https://shopify.dev/changelog/createdat-is-now-available-on-the-customer-object-in-shopify-functions",
+    "dev:https://shopify.dev/changelog/updating-an-orders-shipping-address-returns-accurate-financial-data",
     "merchant:https://changelog.shopify.com/posts/view-app-added-annotations-on-your-analytics-charts",
     "merchant:https://changelog.shopify.com/posts/shopify-messaging-now-supports-whatsapp-marketing",
     "merchant:https://changelog.shopify.com/posts/ups-return-labels-now-available",
