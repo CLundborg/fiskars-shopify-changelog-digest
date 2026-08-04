@@ -1,7 +1,9 @@
 {
-  "lastRunAt": "2026-08-03T10:09:58.019Z",
-  "lastPostedDate": "2026-08-03",
+  "lastRunAt": "2026-08-04T09:17:11.796Z",
+  "lastPostedDate": "2026-08-04",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/oxygen-is-now-available-on-development-stores",
+    "dev:https://shopify.dev/changelog/order-create-fulfillment-tracking-numbers",
     "dev:https://shopify.dev/changelog/updated-built-for-shopify-requirements-for-fulfillment-services-apps",
     "dev:https://shopify.dev/changelog/hydrogen-developer-preview-update-july-30",
     "dev:https://shopify.dev/changelog/new-fields-for-cash-management-activities-and-drawers",
