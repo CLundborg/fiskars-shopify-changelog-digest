@@ -1,7 +1,9 @@
 {
-  "lastRunAt": "2026-08-06T09:18:22.739Z",
-  "lastPostedDate": "2026-08-06",
+  "lastRunAt": "2026-08-07T07:49:16.524Z",
+  "lastPostedDate": "2026-08-07",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/events-and-actions-cart-attributes-support",
+    "merchant:https://changelog.shopify.com/posts/collect-whatsapp-marketing-consent-on-shopify-forms",
     "dev:https://shopify.dev/changelog/webmcp-liquid-hydrogen",
     "merchant:https://changelog.shopify.com/posts/microsoft-advertising-now-available-in-campaign-autopilot",
     "dev:https://shopify.dev/changelog/oxygen-is-now-available-on-development-stores",
