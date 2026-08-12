@@ -1,7 +1,9 @@
 {
-  "lastRunAt": "2026-08-11T07:43:27.653Z",
-  "lastPostedDate": "2026-08-11",
+  "lastRunAt": "2026-08-12T07:57:20.194Z",
+  "lastPostedDate": "2026-08-12",
   "seenIds": [
+    "merchant:https://changelog.shopify.com/posts/managed-markets-is-ending-delivered-duty-unpaid-ddu-support",
+    "merchant:https://changelog.shopify.com/posts/enhanced-printed-receipt-editor",
     "merchant:https://changelog.shopify.com/posts/see-shop-campaigns-performance-in-your-analytics-tools",
     "dev:https://shopify.dev/changelog/shop-campaigns-shopifyql",
     "dev:https://shopify.dev/changelog/events-and-actions-cart-attributes-support",
@@ -44,6 +46,7 @@
     "dev:https://shopify.dev/changelog/pos-ui-extensions-2026-07-adds-discount-allocations-to-bundle-components",
     "merchant:https://changelog.shopify.com/posts/drive-international-conversion-with-automated-duties-inclusive-pricing-from-shopify-managed-markets",
     "merchant:https://changelog.shopify.com/posts/flow-copy-and-paste-steps-in-your-workflows",
+    "merchant:https://changelog.shopify.com/posts/cpsc-efiling-fields-now-available",
     "merchant:https://changelog.shopify.com/posts/turn-automatic-hreflang-tags-on-or-off-from-your-admin-settings",
     "dev:https://shopify.dev/changelog/pos-extensions-now-supports-a-background-extension-target",
     "dev:https://shopify.dev/changelog/identity-verification-for-partners",
