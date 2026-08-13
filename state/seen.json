@@ -1,5 +1,5 @@
 {
-  "lastRunAt": "2026-08-12T07:57:20.194Z",
+  "lastRunAt": "2026-08-13T07:58:40.644Z",
   "lastPostedDate": "2026-08-12",
   "seenIds": [
     "merchant:https://changelog.shopify.com/posts/managed-markets-is-ending-delivered-duty-unpaid-ddu-support",
@@ -1382,7 +1382,6 @@
     "merchant:https://changelog.shopify.com/posts/error-messages-now-available-in-the-shopify-pixel-helper",
     "dev:https://shopify.dev/changelog/error-messages-available-in-the-shopify-pixel-helper",
     "merchant:https://changelog.shopify.com/posts/suggested-replies-are-live-for-eligible-merchants-in-inbox-powered-by-shopify-magic",
-    "dev:https://shopify.dev/changelog/removing-metafieldstorefrontvisibility-related-fields-and-mutations-from-admin-graphql-api",
     "merchant:https://changelog.shopify.com/posts/unified-file-editor-available-in-admin",
     "merchant:https://changelog.shopify.com/posts/improved-display-of-order-items-when-buying-shipping-labels-in-bulk",
     "merchant:https://changelog.shopify.com/posts/migration-to-hcaptcha-on-the-challenge-page",
@@ -2369,6 +2368,7 @@
     "merchant:https://changelog.shopify.com/posts/include-more-of-your-product-images-with-the-updated-buy-button-template",
     "merchant:https://changelog.shopify.com/posts/bxgy-discounts-just-got-even-better",
     "merchant:https://changelog.shopify.com/posts/app-trial-duration-and-billing-information",
+    "dev:https://shopify.dev/changelog/removing-metafieldstorefrontvisibility-related-fields-and-mutations-from-admin-graphql-api",
     "dev:https://shopify.dev/changelog/hydrogen-august-2024-release",
     "dev:https://shopify.dev/changelog/added-new-access-argument-to-standardmetafielddefinitionenable-and-standardmetafielddefinitionsenable-graphql-mutations",
     "dev:https://shopify.dev/changelog/notice-of-important-updates-to-our-partner-program-agreement-api-license-and-terms-of-use",
