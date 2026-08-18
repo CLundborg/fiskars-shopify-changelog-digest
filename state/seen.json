@@ -1,8 +1,9 @@
 {
-  "lastRunAt": "2026-08-17T08:04:41.862Z",
-  "lastPostedDate": "2026-08-14",
+  "lastRunAt": "2026-08-18T07:11:00.843Z",
+  "lastPostedDate": "2026-08-18",
   "seenIds": [
     "merchant:https://changelog.shopify.com/posts/recommended-changes-to-checkout-field-settings-are-now-available",
+    "merchant:https://changelog.shopify.com/posts/taxes-now-recalculate-automatically-when-you-change-an-order-s-shipping-address",
     "merchant:https://changelog.shopify.com/posts/dhl-express-is-now-available-in-the-uk-germany-france-italy-and-spain",
     "merchant:https://changelog.shopify.com/posts/managed-markets-is-ending-delivered-duty-unpaid-ddu-support",
     "merchant:https://changelog.shopify.com/posts/enhanced-printed-receipt-editor",
@@ -690,6 +691,7 @@
     "dev:https://shopify.dev/changelog/meta-pixel-full-funnel-installation-tracking",
     "dev:https://shopify.dev/changelog/request-app-reviews-in-admin-with-the-new-reviews-api",
     "dev:https://shopify.dev/changelog/removal-of-support-for-sell-from-all-locations-fulfillable-inventory-setting",
+    "dev:https://shopify.dev/changelog/tax-webhook-summary-and-calculation-requests-now-use-global-ids",
     "dev:https://shopify.dev/changelog/shopify-payments-payout-graphql-type-supports-externaltraceid",
     "dev:https://shopify.dev/changelog/orders-query-now-supports-currenttotalprice-and-totalweight-filters-and-currenttotalprice-as-a-sortkey",
     "merchant:https://changelog.shopify.com/posts/credit-limits-change-with-your-business",
@@ -2363,7 +2365,6 @@
     "merchant:https://changelog.shopify.com/posts/include-more-of-your-product-images-with-the-updated-buy-button-template",
     "merchant:https://changelog.shopify.com/posts/bxgy-discounts-just-got-even-better",
     "merchant:https://changelog.shopify.com/posts/app-trial-duration-and-billing-information",
-    "dev:https://shopify.dev/changelog/tax-webhook-summary-and-calculation-requests-now-use-global-ids",
     "dev:https://shopify.dev/changelog/developer-preview-accelerated-checkout-buttons-on-storefront-now-support-shopify-functions-bundles-and-have-improved-performance",
     "dev:https://shopify.dev/changelog/storefront-api-changes-when-cart-id-is-missing-the-key-param",
     "dev:https://shopify.dev/changelog/deprecation-notice-productchangestatus-in-admin-graphql-api",
