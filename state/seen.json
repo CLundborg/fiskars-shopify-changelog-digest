@@ -1,5 +1,5 @@
 {
-  "lastRunAt": "2026-08-20T07:13:39.842Z",
+  "lastRunAt": "2026-08-21T07:14:02.243Z",
   "lastPostedDate": "2026-08-20",
   "seenIds": [
     "dev:https://shopify.dev/changelog/app-intents-on-admin-app-intent-link-now-open-as-a-full-page-navigation",
@@ -38,7 +38,6 @@
     "merchant:https://changelog.shopify.com/posts/new-app-added-annotations-on-your-analytics-charts",
     "dev:https://shopify.dev/changelog/metafield-triggers-and-additional-topics-are-now-available-for-events",
     "dev:https://shopify.dev/changelog/developer-preview-liquid-block-and-partial-tags",
-    "dev:https://shopify.dev/changelog/full-stack-capabilities-to-power-app-analytics",
     "dev:https://shopify.dev/changelog/physical-inventory-feature-preview",
     "merchant:https://changelog.shopify.com/posts/localized-address-fields-are-rolling-out-to-checkout-and-shopify-admin",
     "merchant:https://changelog.shopify.com/posts/shopify-managed-markets-now-supports-eu-buyer-cancellation-and-return-requests",
@@ -2366,6 +2365,7 @@
     "merchant:https://changelog.shopify.com/posts/include-more-of-your-product-images-with-the-updated-buy-button-template",
     "merchant:https://changelog.shopify.com/posts/bxgy-discounts-just-got-even-better",
     "merchant:https://changelog.shopify.com/posts/app-trial-duration-and-billing-information",
+    "dev:https://shopify.dev/changelog/full-stack-capabilities-to-power-app-analytics",
     "dev:https://shopify.dev/changelog/breaking-changes-to-media-in-graphql-api-s-productset-mutation-in-version-2024-10",
     "dev:https://shopify.dev/changelog/metafields-and-metaobjects-reserved-prefixes-now-supported-in-theme-app-extensions",
     "dev:https://shopify.dev/changelog/developer-preview-accelerated-checkout-buttons-on-storefront-now-support-shopify-functions-bundles-and-have-improved-performance",
