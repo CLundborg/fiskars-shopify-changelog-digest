@@ -1,8 +1,11 @@
 {
-  "lastRunAt": "2026-08-24T07:33:49.127Z",
-  "lastPostedDate": "2026-08-24",
+  "lastRunAt": "2026-08-25T07:14:51.244Z",
+  "lastPostedDate": "2026-08-25",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/online-store-script-tags-deprecation",
+    "merchant:https://changelog.shopify.com/posts/shopify-tax-is-now-compatible-with-order-routing",
     "merchant:https://changelog.shopify.com/posts/review-shopify-payments-balance-activity-with-the-new-activity-report",
+    "merchant:https://changelog.shopify.com/posts/checkout-now-defaults-to-last-used-payment-method-for-signed-in-customers",
     "merchant:https://changelog.shopify.com/posts/bulk-staff-setup-with-csv-import",
     "dev:https://shopify.dev/changelog/app-intents-on-admin-app-intent-link-now-open-as-a-full-page-navigation",
     "dev:https://shopify.dev/changelog/hydrogen-developer-preview-update-august-18-2026",
