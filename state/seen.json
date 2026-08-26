@@ -1,5 +1,5 @@
 {
-  "lastRunAt": "2026-08-25T07:14:51.244Z",
+  "lastRunAt": "2026-08-26T07:15:08.132Z",
   "lastPostedDate": "2026-08-25",
   "seenIds": [
     "dev:https://shopify.dev/changelog/online-store-script-tags-deprecation",
@@ -1371,7 +1371,6 @@
     "dev:https://shopify.dev/changelog/admin-api-removes-lineitemsmutable-field-on-order",
     "dev:https://shopify.dev/changelog/customer-order-company-and-model3d-graphql-types-available-in-metafieldreference-union-for-2024-01-and-onward",
     "dev:https://shopify.dev/changelog/protected-customer-data-access-required-to-use-the-customer-account-api",
-    "dev:https://shopify.dev/changelog/adding-productvariantscount-graphql-field",
     "merchant:https://changelog.shopify.com/posts/youtube-shopping-affiliate-program-now-available-to-eligible-merchants",
     "merchant:https://changelog.shopify.com/posts/finance-now-shows-all-your-financial-products-in-one-place",
     "merchant:https://changelog.shopify.com/posts/shopify-collective-upgrades-retailers-to-a-new-unified-shipping-profile",
@@ -2366,6 +2365,7 @@
     "merchant:https://changelog.shopify.com/posts/include-more-of-your-product-images-with-the-updated-buy-button-template",
     "merchant:https://changelog.shopify.com/posts/bxgy-discounts-just-got-even-better",
     "merchant:https://changelog.shopify.com/posts/app-trial-duration-and-billing-information",
+    "dev:https://shopify.dev/changelog/adding-productvariantscount-graphql-field",
     "dev:https://shopify.dev/changelog/built-for-shopify-technical-criteria-checklist-has-been-updated",
     "dev:https://shopify.dev/changelog/updates-to-feature-filters-theme-listing-partner-pages",
     "dev:https://shopify.dev/changelog/remove-unused-error-codes-from-locationdeactivateusererrorcode",
