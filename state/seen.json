@@ -1,6 +1,6 @@
 {
-  "lastRunAt": "2026-08-28T18:51:38.227Z",
-  "lastPostedDate": "2026-08-28",
+  "lastRunAt": "2026-08-31T14:11:02.538Z",
+  "lastPostedDate": "2026-08-31",
   "seenIds": [
     "dev:https://shopify.dev/changelog/more-resilient-refreshes-for-expiring-offline-access-tokens",
     "dev:https://shopify.dev/changelog/password-protected-shop-dev-flows-on-shopify-theme-cli-v3-83-x-and-older-to-be-deprecated",
@@ -16,6 +16,7 @@
     "dev:https://shopify.dev/changelog/app-intents-on-admin-app-intent-link-now-open-as-a-full-page-navigation",
     "dev:https://shopify.dev/changelog/hydrogen-developer-preview-update-august-18-2026",
     "merchant:https://changelog.shopify.com/posts/a-redesigned-point-of-sale-channel-page-with-an-easy-entry-point-to-the-pos-editor",
+    "merchant:https://changelog.shopify.com/posts/inventory-reports-now-show-on-hand-quantity",
     "merchant:https://changelog.shopify.com/posts/recommended-changes-to-checkout-field-settings-are-now-available",
     "merchant:https://changelog.shopify.com/posts/taxes-now-recalculate-automatically-when-you-change-an-order-s-shipping-address",
     "merchant:https://changelog.shopify.com/posts/dhl-express-is-now-available-in-the-uk-germany-france-italy-and-spain",
@@ -1368,7 +1369,6 @@
     "merchant:https://changelog.shopify.com/posts/don-t-collect-tax-option-now-available-for-b2b",
     "merchant:https://changelog.shopify.com/posts/flow-use-returned-data-from-send-admin-api-request-action",
     "dev:https://shopify.dev/changelog/allow-item-activation-at-legacy-location",
-    "dev:https://shopify.dev/changelog/reversefulfillmentorderlineitem-fulfillmentlineitem-field-is-nullable-as-of-2024-10",
     "merchant:https://changelog.shopify.com/posts/split-shipping-in-checkout-is-available-to-all-merchants",
     "merchant:https://changelog.shopify.com/posts/bancontact-payment-method-added-to-managed-markets",
     "merchant:https://changelog.shopify.com/posts/collective-retailers-can-fetch-suppliers-shipping-rates-live-at-checkout",
@@ -2368,6 +2368,7 @@
     "merchant:https://changelog.shopify.com/posts/include-more-of-your-product-images-with-the-updated-buy-button-template",
     "merchant:https://changelog.shopify.com/posts/bxgy-discounts-just-got-even-better",
     "merchant:https://changelog.shopify.com/posts/app-trial-duration-and-billing-information",
+    "dev:https://shopify.dev/changelog/reversefulfillmentorderlineitem-fulfillmentlineitem-field-is-nullable-as-of-2024-10",
     "dev:https://shopify.dev/changelog/admin-api-removes-lineitemsmutable-field-on-order",
     "dev:https://shopify.dev/changelog/customer-order-company-and-model3d-graphql-types-available-in-metafieldreference-union-for-2024-01-and-onward",
     "dev:https://shopify.dev/changelog/protected-customer-data-access-required-to-use-the-customer-account-api",
