@@ -1,7 +1,9 @@
 {
-  "lastRunAt": "2026-08-31T14:11:02.538Z",
-  "lastPostedDate": "2026-08-31",
+  "lastRunAt": "2026-09-01T11:50:03.032Z",
+  "lastPostedDate": "2026-09-01",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/polaris-cdn-1-1-release-candidate",
+    "dev:https://shopify.dev/changelog/the-polaris-cdn-is-adopting-semantic-versioning",
     "dev:https://shopify.dev/changelog/more-resilient-refreshes-for-expiring-offline-access-tokens",
     "dev:https://shopify.dev/changelog/password-protected-shop-dev-flows-on-shopify-theme-cli-v3-83-x-and-older-to-be-deprecated",
     "dev:https://shopify.dev/changelog/four-additional-topics-are-now-available-for-events",
