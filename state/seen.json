@@ -1,7 +1,9 @@
 {
-  "lastRunAt": "2026-09-03T11:27:46.025Z",
-  "lastPostedDate": "2026-09-03",
+  "lastRunAt": "2026-09-04T11:30:57.325Z",
+  "lastPostedDate": "2026-09-04",
   "seenIds": [
+    "merchant:https://changelog.shopify.com/posts/permitted-store-staff-can-now-see-an-identified-customer-s-online-cart-in-pos",
+    "dev:https://shopify.dev/changelog/hydrogen-developer-preview-update-september-2-2026",
     "merchant:https://changelog.shopify.com/posts/scan-and-search-variants-with-multiple-barcodes",
     "merchant:https://changelog.shopify.com/posts/check-connectivity-status-from-pos-home",
     "dev:https://shopify.dev/changelog/polaris-cdn-1-1-release-candidate",
@@ -320,6 +322,7 @@
     "dev:https://shopify.dev/changelog/removal-of-pretaxprice-from-the-order-rest-admin-api",
     "dev:https://shopify.dev/changelog/adding-barcode-support-to-inventory-shipments-api",
     "merchant:https://changelog.shopify.com/posts/quick-sale-is-now-available-in-every-country",
+    "dev:https://shopify.dev/changelog/expiring-offline-access-tokens-required-for-public-apps-april-1-2026",
     "dev:https://shopify.dev/changelog/process-refunds-only-through-the-original-payment-processor-requirement-update",
     "dev:https://shopify.dev/changelog/admin-intents-now-support-settings",
     "merchant:https://changelog.shopify.com/posts/flow-new-actions-to-get-data-about-markets-and-articles",
@@ -2372,7 +2375,6 @@
     "merchant:https://changelog.shopify.com/posts/bxgy-discounts-just-got-even-better",
     "merchant:https://changelog.shopify.com/posts/app-trial-duration-and-billing-information",
     "merchant:https://changelog.shopify.com/posts/inventory-reports-now-show-on-hand-quantity",
-    "dev:https://shopify.dev/changelog/expiring-offline-access-tokens-required-for-public-apps-april-1-2026",
     "dev:https://shopify.dev/changelog/reversefulfillmentorderlineitem-fulfillmentlineitem-field-is-nullable-as-of-2024-10",
     "dev:https://shopify.dev/changelog/admin-api-removes-lineitemsmutable-field-on-order",
     "dev:https://shopify.dev/changelog/customer-order-company-and-model3d-graphql-types-available-in-metafieldreference-union-for-2024-01-and-onward",
