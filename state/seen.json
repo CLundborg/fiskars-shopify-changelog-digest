@@ -1,7 +1,11 @@
 {
-  "lastRunAt": "2026-09-08T12:12:23.056Z",
-  "lastPostedDate": "2026-09-07",
+  "lastRunAt": "2026-09-09T11:35:46.899Z",
+  "lastPostedDate": "2026-09-09",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/product-variant-barcode-is-being-replaced-by-barcodes",
+    "merchant:https://changelog.shopify.com/posts/multiple-barcodes-in-variants",
+    "dev:https://shopify.dev/changelog/customer-address-apis-now-support-countrycode",
+    "merchant:https://changelog.shopify.com/posts/meta-is-now-an-ai-channel-in-your-admin",
     "dev:https://shopify.dev/changelog/08-25-is-now-supported",
     "merchant:https://changelog.shopify.com/posts/permitted-store-staff-can-now-see-an-identified-customer-s-online-cart-in-pos",
     "dev:https://shopify.dev/changelog/hydrogen-developer-preview-update-september-2-2026",
