@@ -1,7 +1,9 @@
 {
-  "lastRunAt": "2026-09-10T11:33:25.579Z",
-  "lastPostedDate": "2026-09-10",
+  "lastRunAt": "2026-09-11T11:34:33.009Z",
+  "lastPostedDate": "2026-09-11",
   "seenIds": [
+    "merchant:https://changelog.shopify.com/posts/collect-whatsapp-marketing-consent-at-checkout",
+    "dev:https://shopify.dev/changelog/discounts-allocator-function-api-developer-preview-has-ended",
     "dev:https://shopify.dev/changelog/create-and-delete-dev-stores-in-shopify-cli",
     "dev:https://shopify.dev/changelog/product-variant-barcode-is-being-replaced-by-barcodes",
     "merchant:https://changelog.shopify.com/posts/multiple-barcodes-in-variants",
@@ -1371,7 +1373,6 @@
     "dev:https://shopify.dev/changelog/customer-sms-consent-collected-from-now-returns-shopify-when-the-buyer-consents-to-sms-marketing-in-shopify-checkout",
     "dev:https://shopify.dev/changelog/hydrogen-september-2024-release",
     "dev:https://shopify.dev/changelog/introducing-product_category_id-in-collectionrulecolumn-and-deprecating-product_taxonomy_node_id-for-automated-collection-creation",
-    "dev:https://shopify.dev/changelog/updates-to-webhook-retry-mechanism",
     "merchant:https://changelog.shopify.com/posts/shipping-claims-in-admin",
     "merchant:https://changelog.shopify.com/posts/don-t-collect-tax-option-now-available-for-b2b",
     "merchant:https://changelog.shopify.com/posts/flow-use-returned-data-from-send-admin-api-request-action",
@@ -2374,6 +2375,7 @@
     "merchant:https://changelog.shopify.com/posts/include-more-of-your-product-images-with-the-updated-buy-button-template",
     "merchant:https://changelog.shopify.com/posts/bxgy-discounts-just-got-even-better",
     "merchant:https://changelog.shopify.com/posts/app-trial-duration-and-billing-information",
+    "dev:https://shopify.dev/changelog/updates-to-webhook-retry-mechanism",
     "dev:https://shopify.dev/changelog/static-app-navigation-for-admin-apps-is-no-longer-supported",
     "dev:https://shopify.dev/changelog/removing-v2-suffix-from-fulfillmentcreatev2-and-fulfillmenttrackinginfoupdatev2",
     "dev:https://shopify.dev/changelog/the-rest-location-resource-requires-locations-scope",
