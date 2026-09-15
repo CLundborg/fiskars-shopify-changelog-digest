@@ -1,7 +1,8 @@
 {
-  "lastRunAt": "2026-09-14T13:04:45.896Z",
-  "lastPostedDate": "2026-09-14",
+  "lastRunAt": "2026-09-15T11:54:51.143Z",
+  "lastPostedDate": "2026-09-15",
   "seenIds": [
+    "merchant:https://changelog.shopify.com/posts/keep-the-cart-in-view-on-mobile-pos",
     "merchant:https://changelog.shopify.com/posts/multi-currency-payouts-now-available-in-australia-and-france",
     "merchant:https://changelog.shopify.com/posts/collect-whatsapp-marketing-consent-at-checkout",
     "dev:https://shopify.dev/changelog/discounts-allocator-function-api-developer-preview-has-ended",
@@ -13,6 +14,7 @@
     "dev:https://shopify.dev/changelog/08-25-is-now-supported",
     "merchant:https://changelog.shopify.com/posts/permitted-store-staff-can-now-see-an-identified-customer-s-online-cart-in-pos",
     "dev:https://shopify.dev/changelog/hydrogen-developer-preview-update-september-2-2026",
+    "dev:https://shopify.dev/changelog/new-paymentinstrumentsendaddemail-mutation",
     "merchant:https://changelog.shopify.com/posts/scan-and-search-variants-with-multiple-barcodes",
     "merchant:https://changelog.shopify.com/posts/check-connectivity-status-from-pos-home",
     "dev:https://shopify.dev/changelog/polaris-cdn-1-1-release-candidate",
