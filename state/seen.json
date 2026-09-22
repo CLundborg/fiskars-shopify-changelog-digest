@@ -1,7 +1,10 @@
 {
-  "lastRunAt": "2026-09-21T13:03:12.890Z",
-  "lastPostedDate": "2026-09-21",
+  "lastRunAt": "2026-09-22T11:53:37.617Z",
+  "lastPostedDate": "2026-09-22",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/unlimited-private-plans-and-target-stores-in-shopify-app-pricing",
+    "dev:https://shopify.dev/changelog/is-translatable-metafield-field",
+    "merchant:https://changelog.shopify.com/posts/shopify-analytics-session-measurement-improvements",
     "dev:https://shopify.dev/changelog/automaticdiscounts-query-is-removed-in-api-version-2027-01",
     "dev:https://shopify.dev/changelog/request-a-bundle-size-exception-for-existing-ui-extensions",
     "dev:https://shopify.dev/changelog/adding-a-canceled-receive-action-to-the-inventory-shipments-api",
