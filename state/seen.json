@@ -1,7 +1,12 @@
 {
-  "lastRunAt": "2026-09-22T11:53:37.617Z",
-  "lastPostedDate": "2026-09-22",
+  "lastRunAt": "2026-09-23T11:52:45.419Z",
+  "lastPostedDate": "2026-09-23",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/events-subscription-query-complexity-limit-is-changing-to-100-points",
+    "dev:https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable",
+    "merchant:https://changelog.shopify.com/posts/plan-launches-events-and-tests-with-clearer-and-more-granular-controls-in-rollouts",
+    "dev:https://shopify.dev/changelog/removing-marketcurrencysettingsupdate-mutation",
+    "merchant:https://changelog.shopify.com/posts/shop-pay-installments-can-now-be-enabled-on-multiple-business-entities",
     "dev:https://shopify.dev/changelog/unlimited-private-plans-and-target-stores-in-shopify-app-pricing",
     "dev:https://shopify.dev/changelog/is-translatable-metafield-field",
     "merchant:https://changelog.shopify.com/posts/shopify-analytics-session-measurement-improvements",
