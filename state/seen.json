@@ -1,7 +1,9 @@
 {
-  "lastRunAt": "2026-09-23T11:52:45.419Z",
-  "lastPostedDate": "2026-09-23",
+  "lastRunAt": "2026-09-24T11:59:54.437Z",
+  "lastPostedDate": "2026-09-24",
   "seenIds": [
+    "merchant:https://changelog.shopify.com/posts/improved-shipping-and-duty-data-in-analytics",
+    "dev:https://shopify.dev/changelog/setting-includerestofworld-to-true-returns-an-error-in-api-version-2027-01",
     "dev:https://shopify.dev/changelog/events-subscription-query-complexity-limit-is-changing-to-100-points",
     "dev:https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable",
     "merchant:https://changelog.shopify.com/posts/plan-launches-events-and-tests-with-clearer-and-more-granular-controls-in-rollouts",
