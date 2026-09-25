@@ -1,9 +1,9 @@
 {
-  "lastRunAt": "2026-09-24T11:59:54.437Z",
-  "lastPostedDate": "2026-09-24",
+  "lastRunAt": "2026-09-25T12:01:05.465Z",
+  "lastPostedDate": "2026-09-25",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/polaris-2-0-release-candidate",
     "merchant:https://changelog.shopify.com/posts/improved-shipping-and-duty-data-in-analytics",
-    "dev:https://shopify.dev/changelog/setting-includerestofworld-to-true-returns-an-error-in-api-version-2027-01",
     "dev:https://shopify.dev/changelog/events-subscription-query-complexity-limit-is-changing-to-100-points",
     "dev:https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable",
     "merchant:https://changelog.shopify.com/posts/plan-launches-events-and-tests-with-clearer-and-more-granular-controls-in-rollouts",
@@ -2382,6 +2382,7 @@
     "merchant:https://changelog.shopify.com/posts/include-more-of-your-product-images-with-the-updated-buy-button-template",
     "merchant:https://changelog.shopify.com/posts/bxgy-discounts-just-got-even-better",
     "merchant:https://changelog.shopify.com/posts/app-trial-duration-and-billing-information",
+    "dev:https://shopify.dev/changelog/setting-includerestofworld-to-true-returns-an-error-in-api-version-2027-01",
     "dev:https://shopify.dev/changelog/introducing-metafield-definition-capabilities-in-the-admin-api",
     "dev:https://shopify.dev/changelog/metafield-definition-capability-framework-and-deprecation-of-use_as_collection_condition",
     "dev:https://shopify.dev/changelog/new-inventory-input-fields-in-productset-mutation-in-version-2024-10",
