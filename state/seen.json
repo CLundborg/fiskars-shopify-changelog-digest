@@ -1,7 +1,10 @@
 {
-  "lastRunAt": "2026-09-29T13:09:03.334Z",
-  "lastPostedDate": "2026-09-29",
+  "lastRunAt": "2026-09-30T12:49:38.307Z",
+  "lastPostedDate": "2026-09-30",
   "seenIds": [
+    "merchant:https://changelog.shopify.com/posts/shop-is-now-at-shop-com",
+    "dev:https://shopify.dev/changelog/more-resilient-token-exchanges-when-migrating-tokens-without-a-user-session",
+    "dev:https://shopify.dev/changelog/manage-packed-product-dimensions-with-the-admin-graphql-api",
     "dev:https://shopify.dev/changelog/move-existing-subscriptions-to-shopify-app-pricing",
     "merchant:https://changelog.shopify.com/posts/return-window-overrides-now-available",
     "merchant:https://changelog.shopify.com/posts/local-delivery-orders-in-shopify-pos",
