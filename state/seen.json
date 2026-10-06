@@ -1,7 +1,8 @@
 {
-  "lastRunAt": "2026-10-05T15:01:46.592Z",
-  "lastPostedDate": "2026-10-05",
+  "lastRunAt": "2026-10-06T13:27:22.203Z",
+  "lastPostedDate": "2026-10-06",
   "seenIds": [
+    "merchant:https://changelog.shopify.com/posts/faster-checkout-carts-synced-across-devices-via-shop",
     "merchant:https://changelog.shopify.com/posts/admin-now-available-in-3-new-languages",
     "merchant:https://changelog.shopify.com/posts/schedule-and-test-discounts-with-rollouts",
     "dev:https://shopify.dev/changelog/next-generation-events-are-now-generally-available",
@@ -19,6 +20,8 @@
     "dev:https://shopify.dev/changelog/inventory-shipment-webhooks-include-inventory-transfer-ids",
     "dev:https://shopify.dev/changelog/updated-function-syntax-on-the-segment-query-language",
     "merchant:https://changelog.shopify.com/posts/add-your-own-notes-to-shopify-analytics",
+    "dev:https://shopify.dev/changelog/return-policy-profiles-are-now-available-in-the-graphql-admin-api",
+    "dev:https://shopify.dev/changelog/new-apis-for-buyer-requested-order-edits",
     "dev:https://shopify.dev/changelog/use-app-intents-for-your-discount-app",
     "merchant:https://changelog.shopify.com/posts/shop-is-now-at-shop-com",
     "dev:https://shopify.dev/changelog/more-resilient-token-exchanges-when-migrating-tokens-without-a-user-session",
