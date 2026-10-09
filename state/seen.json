@@ -1,7 +1,9 @@
 {
-  "lastRunAt": "2026-10-08T13:46:11.992Z",
-  "lastPostedDate": "2026-10-08",
+  "lastRunAt": "2026-10-09T13:31:17.461Z",
+  "lastPostedDate": "2026-10-09",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/metafield-owner-types-required-for-checkout-and-customer-account-ui-extensions",
+    "merchant:https://changelog.shopify.com/posts/automatically-generated-policies-help-you-launch-faster",
     "dev:https://shopify.dev/changelog/cart-mutations-reject-unconfirmed-writes-in-pos-ui-extensions-2026-10",
     "dev:https://shopify.dev/changelog/pos-ui-extensions-now-return-percentage-values-for-percentage-discounts",
     "dev:https://shopify.dev/changelog/per-customer-request-limit-for-the-customer-account-api",
