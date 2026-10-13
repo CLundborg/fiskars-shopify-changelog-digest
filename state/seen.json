@@ -1,7 +1,9 @@
 {
-  "lastRunAt": "2026-10-12T15:47:45.285Z",
-  "lastPostedDate": "2026-10-12",
+  "lastRunAt": "2026-10-13T14:25:17.400Z",
+  "lastPostedDate": "2026-10-13",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/detect-when-a-pos-extension-screen-finishes-navigating",
+    "dev:https://shopify.dev/changelog/identify-the-published-version-running-in-a-pos-extension",
     "merchant:https://changelog.shopify.com/posts/translate-adapt-auto-sync-translations-for-up-to-8-languages",
     "merchant:https://changelog.shopify.com/posts/compare-at-prices-now-displayed-to-agentic-channels",
     "dev:https://shopify.dev/changelog/global-catalog-rest-api-stops-serving-traffic-on-november-2-2026",
