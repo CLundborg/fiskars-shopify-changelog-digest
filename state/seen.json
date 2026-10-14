@@ -1,7 +1,10 @@
 {
-  "lastRunAt": "2026-10-13T14:25:17.400Z",
-  "lastPostedDate": "2026-10-13",
+  "lastRunAt": "2026-10-14T12:09:40.530Z",
+  "lastPostedDate": "2026-10-14",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp",
+    "merchant:https://changelog.shopify.com/posts/customize-checkout-and-accounts-configurations-with-sidekick",
+    "dev:https://shopify.dev/changelog/unchanged-carts-no-longer-trigger-carts-update-webhooks",
     "dev:https://shopify.dev/changelog/detect-when-a-pos-extension-screen-finishes-navigating",
     "dev:https://shopify.dev/changelog/identify-the-published-version-running-in-a-pos-extension",
     "merchant:https://changelog.shopify.com/posts/translate-adapt-auto-sync-translations-for-up-to-8-languages",
