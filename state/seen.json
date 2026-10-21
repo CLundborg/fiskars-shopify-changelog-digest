@@ -1,7 +1,10 @@
 {
-  "lastRunAt": "2026-10-20T11:53:00.962Z",
-  "lastPostedDate": "2026-10-20",
+  "lastRunAt": "2026-10-21T12:04:56.511Z",
+  "lastPostedDate": "2026-10-21",
   "seenIds": [
+    "merchant:https://changelog.shopify.com/posts/create-manage-and-review-stock-counts-in-shopify-admin",
+    "dev:https://shopify.dev/changelog/metaobject-analytics-queryable-capability-available-in-the-admin-api",
+    "dev:https://shopify.dev/changelog/securing-your-app-together",
     "dev:https://shopify.dev/changelog/checkout-mcp-and-cart-mcp-now-support-ucp-buyer-consent",
     "merchant:https://changelog.shopify.com/posts/fulfill-orders-in-batches",
     "merchant:https://changelog.shopify.com/posts/buy-shipping-labels-on-shopify-now-in-the-netherlands-and-poland",
@@ -1362,7 +1365,6 @@
     "dev:https://shopify.dev/changelog/breaking-changes-to-captcha-protection-on-storefront-forms",
     "dev:https://shopify.dev/changelog/update-to-fulfillmenthold-heldbyapp-field-from-fulfillmenthold-heldby-field",
     "merchant:https://changelog.shopify.com/posts/brand-the-customer-account-login-page",
-    "dev:https://shopify.dev/changelog/limit-for-full-page-extensions-in-customer-accounts",
     "merchant:https://changelog.shopify.com/posts/flow-trigger-workflows-when-metaobject-entries-are-created",
     "merchant:https://changelog.shopify.com/posts/customer-winback-automations-can-now-accommodate-longer-buying-cycles",
     "merchant:https://changelog.shopify.com/posts/collective-retailers-can-prevent-high-risk-orders-reaching-suppliers",
@@ -2395,6 +2397,7 @@
     "merchant:https://changelog.shopify.com/posts/include-more-of-your-product-images-with-the-updated-buy-button-template",
     "merchant:https://changelog.shopify.com/posts/bxgy-discounts-just-got-even-better",
     "merchant:https://changelog.shopify.com/posts/app-trial-duration-and-billing-information",
+    "dev:https://shopify.dev/changelog/limit-for-full-page-extensions-in-customer-accounts",
     "dev:https://shopify.dev/changelog/checkout-footer-visibility-now-applies-to-merchant-configurable-content",
     "dev:https://shopify.dev/changelog/built-for-shopify-update-to-grace-period-for-programmatically-assessed-criteria",
     "merchant:https://changelog.shopify.com/posts/inventory-reports-now-show-on-hand-quantity",
