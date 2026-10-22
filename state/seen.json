@@ -1,10 +1,13 @@
 {
-  "lastRunAt": "2026-10-21T12:04:56.511Z",
-  "lastPostedDate": "2026-10-21",
+  "lastRunAt": "2026-10-22T12:09:07.884Z",
+  "lastPostedDate": "2026-10-22",
   "seenIds": [
+    "merchant:https://changelog.shopify.com/posts/refreshed-payment-method-design-in-checkout",
+    "merchant:https://changelog.shopify.com/posts/new-protection-against-unexpected-redirects",
     "merchant:https://changelog.shopify.com/posts/create-manage-and-review-stock-counts-in-shopify-admin",
     "dev:https://shopify.dev/changelog/metaobject-analytics-queryable-capability-available-in-the-admin-api",
     "dev:https://shopify.dev/changelog/securing-your-app-together",
+    "dev:https://shopify.dev/changelog/exclusive-timestamp-filters",
     "dev:https://shopify.dev/changelog/checkout-mcp-and-cart-mcp-now-support-ucp-buyer-consent",
     "merchant:https://changelog.shopify.com/posts/fulfill-orders-in-batches",
     "merchant:https://changelog.shopify.com/posts/buy-shipping-labels-on-shopify-now-in-the-netherlands-and-poland",
