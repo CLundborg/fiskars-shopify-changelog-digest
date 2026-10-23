@@ -1,7 +1,11 @@
 {
-  "lastRunAt": "2026-10-22T12:09:07.884Z",
-  "lastPostedDate": "2026-10-22",
+  "lastRunAt": "2026-10-23T11:51:51.580Z",
+  "lastPostedDate": "2026-10-23",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/discover-a-merchant-s-retail-stores-with-ucp-location-search-and-lookup",
+    "dev:https://shopify.dev/changelog/pos-ui-extensions-now-support-reactive-storage-access",
+    "dev:https://shopify.dev/changelog/pos-ui-extensions-2026-10-adds-s-pos-list-a-virtualized-list-with-custom-row-templates",
+    "dev:https://shopify.dev/changelog/polaris-cdn-2-0-is-now-stable",
     "merchant:https://changelog.shopify.com/posts/refreshed-payment-method-design-in-checkout",
     "merchant:https://changelog.shopify.com/posts/new-protection-against-unexpected-redirects",
     "merchant:https://changelog.shopify.com/posts/create-manage-and-review-stock-counts-in-shopify-admin",
