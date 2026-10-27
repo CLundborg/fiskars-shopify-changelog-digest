@@ -1,7 +1,11 @@
 {
-  "lastRunAt": "2026-10-26T13:21:20.949Z",
-  "lastPostedDate": "2026-10-26",
+  "lastRunAt": "2026-10-27T12:29:10.992Z",
+  "lastPostedDate": "2026-10-27",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/search-brands-that-don-t-sell-on-shopify-in-the-catalog-api-beta",
+    "merchant:https://changelog.shopify.com/posts/the-checkout-footer-now-shows-one-terms-and-policies-link",
+    "merchant:https://changelog.shopify.com/posts/knowledge-base-is-now-available-in-your-admin",
+    "merchant:https://changelog.shopify.com/posts/new-eu-product-identifiers-supported-on-shopify-shipping-managed-markets-labels",
     "merchant:https://changelog.shopify.com/posts/guaranteed-flat-rate-shipping-now-in-managed-markets",
     "merchant:https://changelog.shopify.com/posts/generate-images-with-transparent-backgrounds-in-sidekick",
     "merchant:https://changelog.shopify.com/posts/more-accurate-uk-vat-based-on-fulfillment-location",
