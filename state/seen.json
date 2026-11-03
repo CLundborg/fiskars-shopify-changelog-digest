@@ -1,8 +1,10 @@
 {
-  "lastRunAt": "2026-11-02T16:20:33.194Z",
-  "lastPostedDate": "2026-11-02",
+  "lastRunAt": "2026-11-03T14:29:11.597Z",
+  "lastPostedDate": "2026-11-03",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/currententrychange-now-returns-the-previous-page-in-event-from-for-customer-account-full-page-extensions",
     "dev:https://shopify.dev/changelog/ui-extensions-now-support-a-larger-number-of-locales",
+    "dev:https://shopify.dev/changelog/rest-gift-card-line_item_id-will-become-read-only-in-api-version-2027-01",
     "dev:https://shopify.dev/changelog/new-trusted-vault-origin-signal-in-payments-apps-api",
     "merchant:https://changelog.shopify.com/posts/variants-are-now-managed-on-the-product-page",
     "merchant:https://changelog.shopify.com/posts/waive-outstanding-order-balances",
