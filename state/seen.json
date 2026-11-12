@@ -1,7 +1,11 @@
 {
-  "lastRunAt": "2026-11-11T14:35:16.446Z",
-  "lastPostedDate": "2026-11-11",
+  "lastRunAt": "2026-11-12T15:27:37.981Z",
+  "lastPostedDate": "2026-11-12",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/ip-allowlists-are-now-required-for-custom-apps-installed-outside-your-organization",
+    "dev:https://shopify.dev/changelog/app-ip-allowlists-now-support-ip-addresses-and-asns-together",
+    "dev:https://shopify.dev/changelog/storefront-mcp-policies-and-faqs-tool-is-being-deprecated-in-favor-of-ucp-mcp-ask-tool",
+    "dev:https://shopify.dev/changelog/updated-handling-of-customer-data-erasure-requests",
     "merchant:https://changelog.shopify.com/posts/shopify-tax-free-discount-will-no-longer-reset-annually",
     "merchant:https://changelog.shopify.com/posts/updated-eligibility-requirements-for-shop",
     "merchant:https://changelog.shopify.com/posts/configure-self-serve-returns-and-cancellations-for-each-market-you-sell-in",
@@ -12,6 +16,7 @@
     "merchant:https://changelog.shopify.com/posts/faster-pos-checkout",
     "merchant:https://changelog.shopify.com/posts/accept-five-new-local-payment-methods-in-store-with-shopify-payments",
     "dev:https://shopify.dev/changelog/partner-apps-must-enable-bulk-operations-before-use",
+    "dev:https://shopify.dev/changelog/you-can-now-see-how-often-your-checkout-and-customer-account-ui-extensions-fail-to-load-because-of-your-app-and-on-which-stores-in-the-dev-dashboard",
     "dev:https://shopify.dev/changelog/merchant-notes-on-store-credit-transactions",
     "dev:https://shopify.dev/changelog/ordercreate-line-items-support-custom-ids",
     "dev:https://shopify.dev/changelog/order-routing-functions-can-now-apply-one-location-ranking-to-multiple-fulfillment-groups",
