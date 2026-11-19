@@ -1,7 +1,9 @@
 {
-  "lastRunAt": "2026-11-18T15:51:09.383Z",
-  "lastPostedDate": "2026-11-18",
+  "lastRunAt": "2026-11-19T15:55:09.987Z",
+  "lastPostedDate": "2026-11-19",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/app-events-send-events-from-admin-ui-extensions-and-embedded-apps",
+    "dev:https://shopify.dev/changelog/draft-order-discount-permission",
     "dev:https://shopify.dev/changelog/admin-created-custom-apps-are-now-built-and-managed-in-the-dev-dashboard",
     "merchant:https://changelog.shopify.com/posts/custom-apps-created-in-the-shopify-admin-are-moving-to-the-dev-dashboard",
     "dev:https://shopify.dev/changelog/amazon-eventbridge-webhook-payload-size-limit-increased-to-1-mb",
@@ -1431,7 +1433,6 @@
     "merchant:https://changelog.shopify.com/posts/multi-currency-payouts-available-in-select-regions",
     "dev:https://shopify.dev/changelog/search-and-browse-apps-using-structured-category-details-in-the-shopify-app-store",
     "merchant:https://changelog.shopify.com/posts/increased-limits-for-automatic-app-based-discounts",
-    "dev:https://shopify.dev/changelog/new-dynamic-source-attributes-available-in-the-online-store-editor",
     "merchant:https://changelog.shopify.com/posts/validate-shipping-addresses-in-admin",
     "merchant:https://changelog.shopify.com/posts/more-information-now-available-about-fulfillment-holds",
     "merchant:https://changelog.shopify.com/posts/discover-marketing-automation-templates-in-the-flow-app",
@@ -2480,6 +2481,7 @@
     "merchant:https://changelog.shopify.com/posts/include-more-of-your-product-images-with-the-updated-buy-button-template",
     "merchant:https://changelog.shopify.com/posts/bxgy-discounts-just-got-even-better",
     "merchant:https://changelog.shopify.com/posts/app-trial-duration-and-billing-information",
+    "dev:https://shopify.dev/changelog/new-dynamic-source-attributes-available-in-the-online-store-editor",
     "dev:https://shopify.dev/changelog/strongly-matched-apps-will-be-highlighted-in-shopify-app-store-search-results",
     "dev:https://shopify.dev/changelog/edit-customer-account-menu-including-adding-full-page-extensions",
     "dev:https://shopify.dev/changelog/manualpaymentgateway-field-added-to-ordertransaction-object",
