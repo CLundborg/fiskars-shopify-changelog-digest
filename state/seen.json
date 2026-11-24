@@ -1,8 +1,8 @@
 {
-  "lastRunAt": "2026-11-23T18:31:11.559Z",
-  "lastPostedDate": "2026-11-23",
+  "lastRunAt": "2026-11-24T17:59:14.790Z",
+  "lastPostedDate": "2026-11-24",
   "seenIds": [
-    "dev:https://shopify.dev/changelog/query-your-app-s-logs-in-shopify-cli-with-shopify-app-logs",
+    "merchant:https://changelog.shopify.com/posts/manage-whether-ai-agents-can-buy-your-products-for-shoppers-through-chatgpt",
     "merchant:https://changelog.shopify.com/posts/flow-new-updated-triggers-for-orders-customers-and-more",
     "dev:https://shopify.dev/changelog/eventbridgeserverpixelupdate-and-pubsubserverpixelupdate-now-require-user-access-to-the-app",
     "merchant:https://changelog.shopify.com/posts/email-and-text-receipts-now-match-your-printed-receip",
@@ -2493,6 +2493,7 @@
     "merchant:https://changelog.shopify.com/posts/include-more-of-your-product-images-with-the-updated-buy-button-template",
     "merchant:https://changelog.shopify.com/posts/bxgy-discounts-just-got-even-better",
     "merchant:https://changelog.shopify.com/posts/app-trial-duration-and-billing-information",
+    "dev:https://shopify.dev/changelog/query-your-app-s-logs-in-shopify-cli-with-shopify-app-logs",
     "dev:https://shopify.dev/changelog/increased-limits-for-automatic-function-based-discounts",
     "dev:https://shopify.dev/changelog/search-and-browse-apps-using-structured-category-details-in-the-shopify-app-store",
     "dev:https://shopify.dev/changelog/new-dynamic-source-attributes-available-in-the-online-store-editor",
