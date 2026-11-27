@@ -1,7 +1,8 @@
 {
-  "lastRunAt": "2026-11-27T16:51:28.098Z",
-  "lastPostedDate": "2026-11-25",
+  "lastRunAt": "2026-11-27T17:32:54.799Z",
+  "lastPostedDate": "2026-11-27",
   "seenIds": [
+    "dev:https://shopify.dev/changelog/storefront-api-2027-01-ask-storeavailability-for-physical-storefronts-with-physicalstorefront-true",
     "merchant:https://changelog.shopify.com/posts/get-more-evidence-for-chargebacks-on-agentic-orders",
     "merchant:https://changelog.shopify.com/posts/choose-which-staff-get-chargeback-notifications",
     "merchant:https://changelog.shopify.com/posts/fraud-and-unauthorized-chargebacks-now-include-payment-verification-proof",
